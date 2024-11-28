@@ -8,9 +8,6 @@ I need to decide on the color and theme. I should pic something that is unique t
 maybe have the website be a panorama of my different tastes and interests. It could be a 
 look into my mind a little bit. I'll have to keep thinking about it. 
 
-Tools Used to Develop:
-- https://codepen.io/pen/
-
 Main page Layout
 ---
 Title: Prem Gandhi's Personal Website
