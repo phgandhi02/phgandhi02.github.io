@@ -17,19 +17,62 @@
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./porfolio.html">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./blogMainPage.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./pictures.html">Pictures</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./interests.html">Interests</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./awards.html">Awards</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./404.html">Interests</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./404.html">Awards</a></li>
         </ul>
       </div>
     </nav>
     <div class="container">
       <h1>Blog</h1>
       <p>Welcome to my blog! Here you will find posts about Robotics, the Catholic faith, and more.</p>
-      <ul>
-        <li><a href="./blog/post1.html">Blog Post 1</a></li>
-        <li><a href="./blog/post2/post2.html">Blog Post 2</a></li>
-        <!-- <li><a href="post3.html">Blog Post 3</a></li> -->
-      </ul>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Filter Articles by Name..." onkeyup="searchArticles()" />
+      </div>
+      <div class="gallery" id="articleGallery">
+        <!-- Gallery items will be inserted here by JavaScript -->
+      </div>
     </div>
+    <script>
+      const articles = [
+        // Add more articles here
+        { title: "Is Robotics Going Statistics?", url: "./blog/post3/Is_Robotics_Going_Statistics.pdf", img_url: "./blog/post3/SLAM.png", img_alt_text: "SLAM Visualization" },
+        { title: "Intro to the Modern Python Development Environment", url: "./blog/post2/post2.html",img_url: "./blog/post2/python.png", img_alt_text: "Intro to the Modern Python Development Environment" },
+        { title: "First Post", url: "./blog/post1/post1.html"}
+      ];
+
+      const gallery = document.getElementById('articleGallery');
+
+      articles.forEach(article => {
+        const item = document.createElement('div');
+        if (article.img_url == null) {
+          article.img_url = './blog/default.png';
+          article.img_alt_text = 'Default Image';
+        }
+        item.className = 'gallery-item';
+        item.innerHTML = `
+          <a href="${article.url}">
+            <img src=${article.img_url} alt=${article.img_alt_text} />
+            <h3>${article.title}</h3>
+          </a>
+        `;
+        gallery.appendChild(item);
+      });
+
+      function searchArticles() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const items = gallery.getElementsByClassName('gallery-item');
+
+        for (let i = 0; i < items.length; i++) {
+          const item = items[i];
+          const text = item.textContent || item.innerText;
+          if (text.toLowerCase().indexOf(filter) > -1) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      }
+    </script>
   </body>
 </html>
