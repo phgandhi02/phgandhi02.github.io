@@ -12,3 +12,5 @@ TODOs:
 - [ ] flesh out the interests page
 - [ ] Update books that I've read on my interests page.
 - [ ] Look at blog2 for inspiration on how to improve the site.
+- [ ] Look at this website to add some games: https://medium.com/@aboutin/host-unity-games-on-github-pages-for-free-2ed6b4d9c324
+- [ ] Host the website on a Raspberry Pi based on the following tutorial: https://chrisgrime.medium.com/turn-a-raspberry-pi-into-a-web-server-ea7f395e6fe8
