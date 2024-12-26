@@ -1,102 +1,132 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog - Prem Gandhi's Personal Website</title>
-    <link href="./css/styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Prem Gandhi</span>
-        <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./prem-gandhi-laboratory-1080x1080-72dpi-01.jpg" alt="picture of Prem Gandhi" /></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./index.html">About</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./porfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="blogMainPage.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./pictures.html">Pictures</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./interests.html">Interests</a></li>
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./awards.html">Awards</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container">
-        <head>
-            <title>Portfolio of my projects</title>
-        </head>
-        <h1>Portfolio</h1>
-        <h3>Professional Research Experience</h3>
-        <h4>Research Assistant, Aug 2024 - present</h4>
-        <p>Center for Additive Manufacturing and Logistics Lab - NCSU, Raleigh, NC</p>
-        <ul>
-            <li>Developed extension in Nvidia Isaac Sim to dynamically generate manufacturing scenes with robotic manipulators.</li>
-            <li>Implemented Sim2Real data acquisition pipeline for model training, evaluation and testing.</li>
-            <li>Developed custom autonomous mobile robot with Ackermann steering using ros2_control and Arduino via serial communication.</li>
-            <li>Developed simulation of Ackermann drive carlike robot with lidar and camera sensors using Gazebo Classic.</li>
-            <li>Implemented VS Code .devcontainer to simplify development pipeline and assist labmates.</li>
-            <li>Obtained working familiarity with ROS2 Humble by developing 2 small test projects and teaching 2 lab mates.</li>
-        </ul>
-        
-        <h4>Research Assistant, Aug 2024 - present</h4>
-        <p>Active Robotic Sensing Lab - NCSU, Raleigh, NC</p>
-        <ul>
-            <li>(Work in Progress) Published systematic review on image processing for nematode analysis using machine learning and deep learning methods.</li>
-            <li>Performed comprehensive literature review on nematode microscopic image analysis using PRISMA 2020 criteria.</li>
-        </ul>
-        
-        <h4>Research Scientist/Engineer, May 2024 – Aug 2024</h4>
-        <p>Naval Surface Warfare Center Dahlgren Division (NSWCDD), Dahlgren, VA</p>
-        <ul>
-            <li>Developed realistic simulation environment using Unity for modeling quadcopters to enable testing of algorithms and evaluate performance.</li>
-            <li>Implemented data acquisition pipeline using the Unity Perception Package for training model and collected RGB, depth, bounding box, and semantic segmentation images automatically.</li>
-            <li>Created 1 dynamic path planning algorithm for quadcopter simulation based on orientation relative to waypoint.</li>
-            <li>Developed 5 controllers in Unity for control stack to determine low-level control up to high level control using PID loops.</li>
-            <li>Analyzed 5 different commonly used robotics simulators for implementing drone behaviors and realistic scenes.</li>
-        </ul>
-        
-        <h4>Research Assistant, Jan 2023 - present</h4>
-        <p>Center for Additive Manufacturing and Logistics Lab - NCSU, Raleigh, NC</p>
-        <ul>
-            <li>Developed Python software to convert real-time data from NI-DAQ hardware at 500k samples/s across 8 channels into images with customizable resolution.</li>
-            <li>Gained understanding in optimization, plotting, and GUI development in Python for real-time applications.</li>
-            <li>Prototyped over 60 different Python scripts before developing final image generating software.</li>
-            <li>Obtained hands-on understanding of electron beam melting technology and usage for real-time imaging.</li>
-            <li>Created pixel binning algorithm to map analog 500k position and intensity vectors to pixel grid positions in 250 milliseconds.</li>
-            <li>Improved plot generation speed by using blitting and queuing data structures to improve first working prototype by 50% reduction in output time.</li>
-        </ul>
-        
-        <h3>Projects</h3>
-        <h4>Senior Design, Aug 2023 – May 2024</h4>
-        <ul>
-            <li>Designed and assembled hardware for autonomous differential drive robot to collect and eject tennis balls on tennis court.</li>
-            <li>Developed simulation using Gazebo Classic to test and evaluate OpenCV algorithms for ball-detection that was deployed on the autonomous mobile robot.</li>
-            <li>Prototyped 3 revisions of model from cardboard to fully 3D printed model with ball intake mechanism using flywheel.</li>
-            <li>Implemented Arduino Uno hardware abstraction with ros2_control to enable differential drive via joystick control and autonomous control.</li>
-            <li>Managed team of five to prepare 3 comprehensive reports for analyzing market viability, product details, and business proposal, respectively.</li>
-        </ul>
-        
-        <h4>Dual SCARA Robot, Sep 2023 – Dec 2023</h4>
-        <ul>
-            <li>Programmed control of Dual SCARA robotic manipulator using Python to connect joystick controller with Arduino to control two servo motors.</li>
-            <li>Assisted in design of 3D printed frame for robotic manipulator with holder for pencil to draw using joystick controller.</li>
-        </ul>
-        
-        <h4>Industrial Automation Project, Sep 2023 – Dec 2023</h4>
-        <ul>
-            <li>Programmed PLC logic using RSLogix 5000 for conveyor to detect part quality and control conveyor movement based on part quality.</li>
-            <li>Designed and assembled hardware for project using conveyor and sensors implemented using switch relays, PLC, and distance sensors.</li>
-        </ul>
 
-        <h3>Technical Skills</h3>
-        <p>ROS2 (Intermediate), Gazebo/Isaac Sim (Intermediate), Python (Intermediate), C++ (Beginner), C# (Beginner), Docker (Intermediate), Unity (Intermediate), SQL (Beginner), CAD/CAM in Fusion 360</p>
-        
-        <h3>Professional Memberships</h3>
-        <ul>
-            <li>Alpha Pi Mu Honor Society</li>
-            <li>Society of Manufacturing Engineers (SME)</li>
-        </ul>
+<head>
+  <title>Blog - Prem Gandhi's Personal Website</title>
+  <link href="./css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Prem Gandhi</span>
+      <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
+          src="./prem-gandhi-laboratory-1080x1080-72dpi-01.jpg" alt="picture of Prem Gandhi" /></span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./index.html">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./porfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="blogMainPage.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./pictures.html">Pictures</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./interests.html">Interests</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="./awards.html">Awards</a></li>
+      </ul>
     </div>
-  </body>
+  </nav>
+  <div class="container">
+
+    <head>
+      <title>Portfolio of my projects</title>
+    </head>
+    <h1>Portfolio</h1>
+    <h3>Professional Research Experience</h3>
+    <h4>Research Assistant, Aug 2024 - present</h4>
+    <p>Center for Additive Manufacturing and Logistics Lab - NCSU, Raleigh, NC</p>
+    <ul>
+      <li>Developed extension in Nvidia Isaac Sim to dynamically generate manufacturing scenes with robotic
+        manipulators.</li>
+      <li>Implemented Sim2Real data acquisition pipeline for model training, evaluation and testing.</li>
+      <li>Developed custom autonomous mobile robot with Ackermann steering using ros2_control and Arduino via serial
+        communication.</li>
+      <li>Developed simulation of Ackermann drive carlike robot with lidar and camera sensors using Gazebo Classic.</li>
+      <li>Implemented VS Code .devcontainer to simplify development pipeline and assist labmates.</li>
+      <li>Obtained working familiarity with ROS2 Humble by developing 2 small test projects and teaching 2 lab mates.
+      </li>
+    </ul>
+
+    <h4>Research Assistant, Aug 2024 - present</h4>
+    <p>Active Robotic Sensing Lab - NCSU, Raleigh, NC</p>
+    <ul>
+      <li>(Work in Progress) Published systematic review on image processing for nematode analysis using machine
+        learning and deep learning methods.</li>
+      <li>Performed comprehensive literature review on nematode microscopic image analysis using PRISMA 2020 criteria.
+      </li>
+    </ul>
+
+    <h4>Research Scientist/Engineer, May 2024 – Aug 2024</h4>
+    <p>Naval Surface Warfare Center Dahlgren Division (NSWCDD), Dahlgren, VA</p>
+    <ul>
+      <li>Developed realistic simulation environment using Unity for modeling quadcopters to enable testing of
+        algorithms and evaluate performance.</li>
+      <li>Implemented data acquisition pipeline using the Unity Perception Package for training model and collected RGB,
+        depth, bounding box, and semantic segmentation images automatically.</li>
+      <li>Created 1 dynamic path planning algorithm for quadcopter simulation based on orientation relative to waypoint.
+      </li>
+      <li>Developed 5 controllers in Unity for control stack to determine low-level control up to high level control
+        using PID loops.</li>
+      <li>Analyzed 5 different commonly used robotics simulators for implementing drone behaviors and realistic scenes.
+      </li>
+    </ul>
+
+    <h4>Research Assistant, Jan 2023 - present</h4>
+    <p>Center for Additive Manufacturing and Logistics Lab - NCSU, Raleigh, NC</p>
+    <ul>
+      <li>Developed Python software to convert real-time data from NI-DAQ hardware at 500k samples/s across 8 channels
+        into images with customizable resolution.</li>
+      <li>Gained understanding in optimization, plotting, and GUI development in Python for real-time applications.</li>
+      <li>Prototyped over 60 different Python scripts before developing final image generating software.</li>
+      <li>Obtained hands-on understanding of electron beam melting technology and usage for real-time imaging.</li>
+      <li>Created pixel binning algorithm to map analog 500k position and intensity vectors to pixel grid positions in
+        250 milliseconds.</li>
+      <li>Improved plot generation speed by using blitting and queuing data structures to improve first working
+        prototype by 50% reduction in output time.</li>
+    </ul>
+
+    <h3>Projects</h3>
+    <h4>Senior Design, Aug 2023 – May 2024</h4>
+    <ul>
+      <li>Designed and assembled hardware for autonomous differential drive robot to collect and eject tennis balls on
+        tennis court.</li>
+      <li>Developed simulation using Gazebo Classic to test and evaluate OpenCV algorithms for ball-detection that was
+        deployed on the autonomous mobile robot.</li>
+      <li>Prototyped 3 revisions of model from cardboard to fully 3D printed model with ball intake mechanism using
+        flywheel.</li>
+      <li>Implemented Arduino Uno hardware abstraction with ros2_control to enable differential drive via joystick
+        control and autonomous control.</li>
+      <li>Managed team of five to prepare 3 comprehensive reports for analyzing market viability, product details, and
+        business proposal, respectively.</li>
+    </ul>
+
+    <h4>Dual SCARA Robot, Sep 2023 – Dec 2023</h4>
+    <ul>
+      <li>Programmed control of Dual SCARA robotic manipulator using Python to connect joystick controller with Arduino
+        to control two servo motors.</li>
+      <li>Assisted in design of 3D printed frame for robotic manipulator with holder for pencil to draw using joystick
+        controller.</li>
+    </ul>
+
+    <h4>Industrial Automation Project, Sep 2023 – Dec 2023</h4>
+    <ul>
+      <li>Programmed PLC logic using RSLogix 5000 for conveyor to detect part quality and control conveyor movement
+        based on part quality.</li>
+      <li>Designed and assembled hardware for project using conveyor and sensors implemented using switch relays, PLC,
+        and distance sensors.</li>
+    </ul>
+
+    <h3>Technical Skills</h3>
+    <p>ROS2 (Intermediate), Gazebo/Isaac Sim (Intermediate), Python (Intermediate), C++ (Beginner), C# (Beginner),
+      Docker (Intermediate), Unity (Intermediate), SQL (Beginner), CAD/CAM in Fusion 360</p>
+
+    <h3>Professional Memberships</h3>
+    <ul>
+      <li>Alpha Pi Mu Honor Society</li>
+      <li>Society of Manufacturing Engineers (SME)</li>
+    </ul>
+  </div>
+</body>
+
 </html>
