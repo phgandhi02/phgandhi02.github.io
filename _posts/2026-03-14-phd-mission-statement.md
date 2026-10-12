@@ -6,7 +6,7 @@ categories: faith robotics
 giscus_comments: true
 ---
 
-![Medieval scientist being smarter than most scientists today.](/assets/medieval_science.png)
+![Medieval scientist being smarter than most scientists today.](/assets/img/medieval_science.png)
 
 I am pursuing a PhD in Industrial Engineering with a focus on implementing
 sophisticated planning algorithms for robotics in manufacturing environments. I

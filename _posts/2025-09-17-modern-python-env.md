@@ -29,7 +29,7 @@ be make to ensure that this can be applied to other languages when possible.
    applications and services that you want to run. The following picture
    illustrates the point:
 
-   ![Diagram of software components that make a computer operating system](/assets/operating_system_architecture.png)
+   ![Diagram of software components that make a computer operating system](/assets/img/operating_system_architecture.png)
 
 We see that the hardware is all connected to the kernel, in this case Linux
 kernel, and it will make sure that all the services inside and above can talk to
@@ -119,8 +119,8 @@ similar to a house blueprint where you can modify the drawing after it is
 finished but then it may affect other parts in ways that you don't expect.
 Consider the following two images:
 
-![Mona Lisa](/assets/mona_lisa.png)
-![Mona Lisa with mustache](/assets/mona_lisa_mustache.png)
+![Mona Lisa](/assets/img/mona_lisa.png)
+![Mona Lisa with mustache](/assets/img/mona_lisa_mustache.png)
 
 When you add a mustache to the Mona Lisa the have made the picture less cohesive
 and this can clutter up as you manipulate a program beyond it's designed
@@ -305,7 +305,7 @@ examples. I hope to update this essay with my own example someday.
 
    Try implementing some of the solutions below:
 
-   ![Venn Diagram of knowledge when learning and knowledge from experts](/assets/knowledge_Venn_Diagram.png)
+   ![Venn Diagram of knowledge when learning and knowledge from experts](/assets/img/knowledge_Venn_Diagram.png)
 
 5. Practice, Practice, Practice: One should practice regularly and ingest as
    much hands-on learning as possible to develop experience and familiarity with

@@ -8,7 +8,7 @@ giscus_comments: true
 
 ======================
 
-![Very Cool Vignette of Albert Magnus](/assets/millefleur_albert_color.jpg)
+![Very Cool Vignette of Albert Magnus](/assets/img/millefleur_albert_color.jpg)
 
 This post comes after a long period of silence on this blog that I'm sure no one
 reads. I'm making this post to catalog some of the links that I've collected
@@ -31,7 +31,7 @@ men to Christ in their own unique way and find deep friendship and comradery in
 it. The master and pupil are brought together to make something beautiful for
 God (great book btw).
 
-![St. Thomas Aquinas disassembling the servers](/assets/albert_magnus_automata-smashed.jpg)
+![St. Thomas Aquinas disassembling the servers](/assets/img/albert_magnus_automata-smashed.jpg)
 
 This
 [website](https://brewminate.com/automata-the-long-history-of-robots-in-the-ancient-medieval-and-modern-worlds/)
