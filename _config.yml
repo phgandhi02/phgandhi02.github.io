@@ -152,9 +152,9 @@ related_blog_posts:
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
-  repo: phgandhi02/personal_website
+  repo: phgandhi02/phgandhi02.github.io
   repo_id: R_kgDOU7etyA
-  category: Comments # name of the category under which discussions will be created
+  category: Announcements # name of the category under which discussions will be created
   category_id: DIC_kwDOU7etyM4DIGQ8
   mapping: title # identify discussions by post title
   strict: 1 # use strict identification mode
