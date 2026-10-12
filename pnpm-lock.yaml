@@ -1,0 +1,116 @@
+lockfileVersion: "9.0"
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+  .:
+    devDependencies:
+      "@playwright/test":
+        specifier: ^1.56.1
+        version: 1.64.0
+      "@shopify/prettier-plugin-liquid":
+        specifier: ^1.10.0
+        version: 1.11.2(prettier@3.9.10)
+      pixelmatch:
+        specifier: ^7.1.0
+        version: 7.2.0
+      pngjs:
+        specifier: ^7.0.0
+        version: 7.0.0
+      prettier:
+        specifier: ^3.8.0
+        version: 3.9.10
+
+packages:
+  "@playwright/test@1.64.0":
+    resolution: { integrity: sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g== }
+    engines: { node: ">=20" }
+    hasBin: true
+
+  "@shopify/liquid-html-parser@2.10.2":
+    resolution: { integrity: sha512-/qBtTT3tbzSFgFVMNTPhX2pPN14ShMSYTu9nzkCB1vorjNvm1G9mvgYW9jKod0mrki+TUVfMYi5d1H+QKrLnCA== }
+
+  "@shopify/prettier-plugin-liquid@1.11.2":
+    resolution: { integrity: sha512-KTWczMeDBHSOl7eJY1pCrCJ7x5xj4o/F7212J2mOrzB6BmbjtvroARVhPgBgQ7lWF+GqSxva+uLOwR4kd4UFXg== }
+    peerDependencies:
+      prettier: ^2.0.0 || ^3.0.0
+
+  html-styles@1.0.0:
+    resolution: { integrity: sha512-cDl5dcj73oI4Hy0DSUNh54CAwslNLJRCCoO+RNkVo+sBrjA/0+7E/xzvj3zH/GxbbBLGJhE0hBe1eg+0FINC6w== }
+
+  isarray@1.0.0:
+    resolution: { integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ== }
+
+  isobject@2.1.0:
+    resolution: { integrity: sha512-+OUdGJlgjOBZDfxnDjYYG6zp487z0JGNQq3cYQYg5f5hKR+syHMsaztzGeml/4kGG55CSpKSpWTY+jYGgsHLgA== }
+    engines: { node: ">=0.10.0" }
+
+  line-column@1.0.2:
+    resolution: { integrity: sha512-Ktrjk5noGYlHsVnYWh62FLVs4hTb8A3e+vucNZMgPeAOITdshMSgv4cCZQeRDjm7+goqmo6+liZwTXo+U3sVww== }
+
+  pixelmatch@7.2.0:
+    resolution: { integrity: sha512-xhcb4yHu9sM/G7foGzoLtXYcC0zHEaOXXjRKhGup0fw78Nf2Tkiapv4EQyMzrbcmQPsllAI7DbFY2UT7PlI9Pg== }
+    hasBin: true
+
+  playwright-core@1.64.0:
+    resolution: { integrity: sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg== }
+    engines: { node: ">=20" }
+    hasBin: true
+
+  playwright@1.64.0:
+    resolution: { integrity: sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg== }
+    engines: { node: ">=20" }
+    hasBin: true
+
+  pngjs@7.0.0:
+    resolution: { integrity: sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow== }
+    engines: { node: ">=14.19.0" }
+
+  prettier@3.9.10:
+    resolution: { integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA== }
+    engines: { node: ">=14" }
+    hasBin: true
+
+snapshots:
+  "@playwright/test@1.64.0":
+    dependencies:
+      playwright: 1.64.0
+
+  "@shopify/liquid-html-parser@2.10.2":
+    dependencies:
+      line-column: 1.0.2
+
+  "@shopify/prettier-plugin-liquid@1.11.2(prettier@3.9.10)":
+    dependencies:
+      "@shopify/liquid-html-parser": 2.10.2
+      html-styles: 1.0.0
+      prettier: 3.9.10
+
+  html-styles@1.0.0: {}
+
+  isarray@1.0.0: {}
+
+  isobject@2.1.0:
+    dependencies:
+      isarray: 1.0.0
+
+  line-column@1.0.2:
+    dependencies:
+      isarray: 1.0.0
+      isobject: 2.1.0
+
+  pixelmatch@7.2.0:
+    dependencies:
+      pngjs: 7.0.0
+
+  playwright-core@1.64.0: {}
+
+  playwright@1.64.0:
+    dependencies:
+      playwright-core: 1.64.0
+
+  pngjs@7.0.0: {}
+
+  prettier@3.9.10: {}
