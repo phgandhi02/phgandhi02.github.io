@@ -7,7 +7,7 @@ subtitle: Loading something creative...
 
 profile:
   align: right
-  image: prof_pic.jpeg
+  image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>RM 4333</p>
