@@ -1,5 +1,6 @@
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+My name is Prem Gandhi, and I'm a robotics researcher at North Carolina State University currently advised under [Dr. Frederick Livingston](https://ise.ncsu.edu/people/fjliving/).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My current research focus is on robotic manipulation, specifically for manufacturing applications. I hope to develop novel AI algorithms for manipulation using techniques from automated planning, machine learning, and good-ole' fashioned engineering (GOFE). I am excited about the field of robotics, especially given the diversity of problems available for research. 
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Outside of robotics, I love reading, writing, cooking, praying, and hanging out with friends. I love talking about anything, especially philosophy, theology, computer science with a dash of psychology mixed in.
+
