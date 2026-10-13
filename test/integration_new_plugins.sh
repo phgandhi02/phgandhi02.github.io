@@ -49,7 +49,7 @@ grep -q 'assets/al_rtl/css/rtl.css' "${default_site}/index.html" && fail "home p
 
 # --- al_marimo --------------------------------------------------------------
 
-marimo_page="${default_site}/blog/2025/marimo/index.html"
+marimo_page="${default_site}/blog/2021/marimo/index.html"
 [ -f "${marimo_page}" ] || fail "marimo demo post was not built"
 
 grep -q 'assets/al_marimo/js/marimo-snippets.js' "${marimo_page}" || fail "marimo post does not load the runtime"
@@ -83,17 +83,17 @@ protected_site="$(build protected --config "_config.yml,${override}")"
 # core's socials through the plugin needs a change in that gem; until then,
 # asserting "no mailto: anywhere" would be asserting something untrue, and
 # asserting "mailto: still present" would codify the gap as correct.
-grep -q 'assets/al_email_protect/js/email-protect.js' "${protected_site}/index.html" \
-  || fail "email-protect runtime not loaded with protect_email on"
-[ -f "${protected_site}/assets/al_email_protect/js/email-protect.js" ] \
-  || fail "email-protect runtime referenced but not published"
-grep -q 'assets/al_email_protect/css/email-protect.css' "${protected_site}/index.html" \
-  || fail "email-protect stylesheet not loaded with protect_email on"
-[ -f "${protected_site}/assets/al_email_protect/css/email-protect.css" ] \
-  || fail "email-protect stylesheet referenced but not published"
+grep -q 'assets/al_email_protect/js/email-protect.js' "${protected_site}/index.html" ||
+  fail "email-protect runtime not loaded with protect_email on"
+[ -f "${protected_site}/assets/al_email_protect/js/email-protect.js" ] ||
+  fail "email-protect runtime referenced but not published"
+grep -q 'assets/al_email_protect/css/email-protect.css' "${protected_site}/index.html" ||
+  fail "email-protect stylesheet not loaded with protect_email on"
+[ -f "${protected_site}/assets/al_email_protect/css/email-protect.css" ] ||
+  fail "email-protect stylesheet referenced but not published"
 
 # ...and with it off (the default), the plugin costs nothing.
-grep -q 'al_email_protect' "${default_site}/index.html" \
-  && fail "email-protect assets loaded while disabled"
+grep -q 'al_email_protect' "${default_site}/index.html" &&
+  fail "email-protect assets loaded while disabled"
 
 echo "new plugin integration checks passed"

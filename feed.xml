@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://phgandhi02.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://phgandhi02.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-10-12T18:19:49+00:00</updated><id>https://phgandhi02.github.io/feed.xml</id><title type="html">Prem’s World</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. </subtitle><entry><title type="html">Trying to start a new habit</title><link href="https://phgandhi02.github.io/blog/2026/starting-new-habit/" rel="alternate" type="text/html" title="Trying to start a new habit"/><published>2026-09-17T17:14:26+00:00</published><updated>2026-09-17T17:14:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/starting-new-habit</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/starting-new-habit/"><![CDATA[<p>This is my second post after yesterday; a result of a new habit I am starting. The goal is to try and write a post everyday so that I can point to something productive I did. Today I spent some time polishing the best man speech I wrote for my friend Luis.</p>]]></content><author><name></name></author><category term="personal"/><summary type="html"><![CDATA[This is my second post after yesterday; a result of a new habit I am starting. The goal is to try and write a post everyday so that I can point to something productive I did. Today I spent some time polishing the best man speech I wrote for my friend Luis.]]></summary></entry><entry><title type="html">Intro to the Modern Python Development Environment</title><link href="https://phgandhi02.github.io/blog/2026/modern-python-env/" rel="alternate" type="text/html" title="Intro to the Modern Python Development Environment"/><published>2026-09-17T02:43:26+00:00</published><updated>2026-09-17T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/modern-python-env</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/modern-python-env/"><![CDATA[<h3 id="goal">Goal</h3> <p>The goal of this essay is to enable the reader to be able to establish a baseline understanding as to code reproducibility in programming and the necessity for creating environments that can be deployed on any platform that may be included in the deployment audience. Additionally, this essays covers the use of tools designed for creating elegant and professional looking code that can be easily transferred from drawing to code and tested to meet performance criteria. This essay is a basic introduction into the principles that guide modern development with an implementation in the Python language. An effort will be make to ensure that this can be applied to other languages when possible.</p> <h3 id="assumptions-that-i-need-to-address">Assumptions that I need to address</h3> <ol> <li>OS principles:</li> <li>Unix style file directory</li> <li>OS processes</li> <li> <p>How is the computer broken down:</p> <p>The computer is broken down into a kernel that connects the hardware with the applications and services that you want to run. The following picture illustrates the point:</p> <p><img src="/assets/img/operating_system_architecture.png" alt="Diagram of software components that make a computer operating system"/></p> </li> </ol> <p>We see that the hardware is all connected to the kernel, in this case Linux kernel, and it will make sure that all the services inside and above can talk to the list of daemons, shells, toolkits, etc. can have resources. Think of it like a broker service.</p> <h1 id="essay">Essay</h1> <p>The goal of this essay is to enable the reader to be able to understand what problems that professional developers, specifically in the context of python developers face. This is for a more general audience as different python developers can varying problems based on their application such as optimization challenges or package management problems. There are more comprehensive ways to cover these and they require a lot of discourse to fully unpack (the unintended pun being that packages are unpacked to have access to their classes, functions, and methods). This essay will cover what problems developers run in the implementation of their ideas into code and the what solutions are used to solve these problems. This is not specific to computer scientists, rather these principles affect all people who perform technical work in the coming years as programming proficiency has developed into an almost universal requirement for any STEM disciplines.</p> <p>The problems that people run into programming generally is code reproducibility, Code Maintenance, Code communication, and code comprehension. The solutions are then applied to these categories based on popularity, ease of use, and applicability. First, code reproducibility problems occur when someone tries to hand another person code and they are not able to set your computer up like theirs. Second, Code Maintenance problems occur when code must be utilized over a period of time outside of immediate use which leads to the problems of making sure the infrastructure still supports the operation of your code. This is especially relevant after some code needs to reconfigured to operate a different way or have additional functionality.</p> <blockquote> <p>Note: that code reproducibility and Code Maintenance are very closely linked which is why it is important that great care is taken in making sure that programs are developed in well organized environments almost like lab experiments.</p> </blockquote> <p>Third, Code communication is when more than one person is working on code then how do you make sure that your change won’t screw up the codebase. Consider the fact that multiple people may be working on different functions that are going to placed in the same document. How can you make sure that the solution that you’ve made still works? Fourth and lastly, code comprehension problems occur when people are unable to understand the code they are presented because it is too complex, foreign, or proper documentation is not available.</p> <p>code reproducibility in the modern world involves using dependencies. This is simply a fact that one must accept since the code you develop will always rely on some other part that must be trusted and understood to whatever degree the application requires. Fortunately, this problem can be documented such that similar to citing you sources; you can specify your dependencies so others can analyze and recreate your work. The issue with code reproducibility is version control for dependencies which is an important problem that requires the use of solutions like package management tools like poetry and Conda for Python. Understanding how to set up and implement dependency management tools and environment management for Python is a topic that can be addressed in a separate article. The second code reproducibility issue is managing environment variable which is crucial for SSH scripting. This is particularly important for a language like Python which has a fair bit of interaction with the CLI (Command Line Interface). The CLI is used to How to start up conda environments|start up conda environments, how to activate package scripts|activate package scripts like Sphinx package (a documentation generator for Python) or poetry for package management. Using tools like Docker can alleviate this problem since it creates a containerization|container that will utilize all the same OS processes as your computer; however, it will create a completely new Unix style file directory and environment variables list. The third issue is file directory setup which is solved by Docker. This means that the way your file explorer or finder app shows your computers file directory is the same. Having a standard file directory is a big problem when your program is trying to figure out what it is running on and use dependencies and information from that computer to run well. Consider where the program should store data or what if it references another file. If you open up Steam then it shows all the games you have, but what if you move the files for your games somewhere else around the computer then it will not be able to find it. You could probably trick your computer by replacing a file with a black file that has the same name and changing the name of the original file. This is a surefire way to have many problems stop working. This assumption that I can find files and data around your computer is crucial for complex problems that involve user interaction. Consider the environment variables list mentioned earlier. This list must be stored somewhere and depending on your OS the location may be different.</p> <p>Code Maintenance is another major issue that some would argue would fall under reproducibility though I focused more on how the code needs to be maintained over time when changes are made or it is modified. Unfortunately, code is similar to a house blueprint where you can modify the drawing after it is finished but then it may affect other parts in ways that you don’t expect. Consider the following two images:</p> <p><img src="/assets/img/mona_lisa.png" alt="Mona Lisa"/> <img src="/assets/img/mona_lisa_mustache.png" alt="Mona Lisa with mustache"/></p> <p>When you add a mustache to the Mona Lisa the have made the picture less cohesive and this can clutter up as you manipulate a program beyond it’s designed functionality.</p> <p>This should be balanced with the DRY principle which says “Don’t Repeat Yourself” ie. try to abstract ideas that repeatedly used into little pieces that you can reuse over an over when you need. This doesn’t mean you turn everything into a perfect pieces. Rather, find stuff that you are doing in a tedious and repetitive way and see if programming it saves you any time. Many times its easier to let it go and not program unless you enjoy it. Creating well maintained, reusable code is a way to make your life easier in the future, especially if the code will be used often or flexibly.</p> <p>Enough justification about Code Maintenance, now it’s time explain some of the types of problems and how they are solved. The main problems that developers face in Code Maintenance is Code Abstraction, code refactorization, and code testing. These three problems are found in the fact that making general solutions to programming problems is hard and oftentimes it’s easy to hardcode or pile things up into one file rather than abstract code into something general.</p> <p>Code Abstraction is when you try to develop abstract representations of your code such as putting a set of commands into a function, class, or script. This means that whenever a set of code does some set of commands then it should be turned into a function. That function can then placed into larger functions such that a more complex feature is executed. Another approach is to use class and then attach methods so that if you have a class then it will contain all the stuff it needs to operate. Have a set of classes then you can put them together into a larger class that will contain all those functions and whatever else it needs.</p> <p>Code Modularity is a concept that allows you to tuck away the details and trust that the solution works when you apply it. Then the only work is about how you use your newly made tool. If you are making a script then that script should do one thing well and if you need to do multiple things then make another and then import both scripts into a common script where they can be used. Code refactorization is also important for maintenance because it means that clean up the code that you’ve written to make sure that it is simple, professional, and elegant. Oftentimes this means that you make rewrite an object so that it is easier to understand when you hand it to someone else or try to write documentation for it. This may mean splitting things up so that they are more general and act more like Lego blocks than welded parts.</p> <p>Refactor means that code is adjusted to work more flexibly while still retaining its intended functionality. Note: this may involve taking a less optimized approach that it more understand and more flexible while understanding the limitations of the code.</p> <p>Code testing is a major point that I want to harp on because it is not talked about enough in teaching python. This is when you implement tests/logic to make sure that your code is robust and you can figure out what went wrong if your code doesn’t work right. This solves a debugging problem by giving diagnostics about what failed and why when you test a software application. unit testing is a specific tool that has been transformed into a methodology called Test-Driven Development. The idea is that you can create simple tests that will tell you if your code is operating the way you want by seeing if the results you pass are as expected or if they are different. This is useful when your code has bugs that don’t result in errors so you end up with a software that is telling you false information that is assumed to be right.</p> <p><code class="language-plaintext highlighter-rouge">X = 1</code></p> <p><code class="language-plaintext highlighter-rouge">y = x + x</code></p> <p><code class="language-plaintext highlighter-rouge">y = 1000</code></p> <p>Integration testing helps to make sure that when various pieces of code, imported modules, and called services all work together as expected. Note that pieces of code, modules, and services can operate without error while still delivering faulty, buggy results. These are more computer intensive than unit tests since it means that various parts of the code will be initialized and then tested. This is crucial for making sure that your code works the way it is supposed to with other code. This only tests whether the pieces work together not if they work together well. Functional testing is testing to focus on how the software accomplishes the business requirements that it was designed to accomplish. If a search app was designed then this kind of testing determine whether people can effectively search from a business or use perspective to accomplish the requirement of enabling people to search effectively. This tests to see if pieces work together well and correctly. End-to-end testing is to test specific use cases that would imitate a user trying to perform some action that is often more complex than simply testing functionality. These kinds of tests are useful but hard to maintain and should not be relied on since this changes often and it hard to develop without existing test infrastructure.</p> <p>The third major problem that developers face is Code communication which is when more than one person is working on code but everyone has to understand what is happening. The question is then how do you make sure that your change won’t screw up the codebase? Consider the fact that multiple people may be working on different functions that are going to placed in the same document. How can you make sure that the solution that you’ve made still works? By using source control and version control like Github, we can solve this problem. source control is important to make sure that the foundation multiple people are building on stays the same. Consider a team of architects decides to work with contractors to build a house. If one architect goes in the middle of the night and changes the plans then this may affect whether the solutions that other architects made will apply. Additionally, the contractors will have to completely redo their work since their solution may no longer be valid. If changes are understood and agreed upon by the entire team then this problem can be averted. This is done by having people copies of an agreed upon assumption/framework and then putting their solution on top. The various solutions are combined and then any errors that result can be resolved though this should be minimal in an ideal case. Another problem is versioning because people may not know what the latest code is. By implementing a versioning tool, people can ensure that they have the latest setup and along with knowing how changes were implemented over various iterations.</p> <p>The last major problem that developers face is code comprehension. This is common because people often jump to asking ChatGPT or searching Stack Overflow for the answer rather than deducing the answer on their own. This can save time but it comes at the expense of understanding and exercise of intellectual faculties which need to be tested and stressed constantly so that we can grow. The first symptom of this is poor documentation. Documentation is crucial for making sure that people can understand your code if they want to go back and understand. Good code is something that people love to go back and use, including yourself. Consider the library OpenCV which has a famously amazing documentation which can walk anyone through how to do object recognition. Below I’ve listed the various kids of documentation. I would recommend looking up some examples. I hope to update this essay with my own example someday.</p> <ol> <li>one-liner documentation : This is when you just put small comments next to your statements to help elucidate what the goal of your command is. This can help you think through what you want to do along with guiding others.</li> <li>function-level documentation: This is documentation that is placed at the top of a series of one-liners. It explains what the overall goal of the following commands is as well as how to use the function. The function can be implemented as a one-liner documentation so we want to understand how to use the function easily but don’t want to read through the details of what happens.</li> <li>class-level documentation: This is documentation that explains what the set of functions/methods is designed to do and what the goal of this collection of functions/methods is. It also explains what the initialization of this class does and how to use it. This should be a higher level description than a compilation of function-level documentation. It should explain how to use the class and the available functions with brief descriptions of what they are for and how to use them.</li> <li> <p>script-level documentation: This is documentation that is designed to explain what the point of the script/library is. This is a high level view of what the code module does and it explains any classes, script-level functions, and script-wide parameters. This allows someone who calls the module into another document to understand what functionality they can gain and what tools are available to do so. This can be something with a summary followed by a fairly lengthy detailed description that shows what the code can do on a functional, goal-oriented level. reasoning: This means applying logic and understanding the cognitive train of thought that it involved with getting from one set of information or assumptions to a conclusion. Reasoning often occurs in a passive sense and it is something that we do fast-thinking; however, something reasoning involves slow-thinking. We can use models to simplify the logical sequence of steps that must be taken to understand a conclusion. This is often expensive to do in reality and it may not be feasible with additional time or cognitive constraints. This can be improved by developing familiarity with reading documentation. Reading documentation can be tedious but repeated exposure and application can create fast-thinking frameworks that enable the ability to understand how code works faster. Additionally, looking at the definition of the variable, function, class, or script that is being called and see how it is defined within the codebase. This means trying to see what the object does and how it works by looking at the way that some has created ie. look at where the function is defined and read through and understand how it works. VS Code offers an easy way to do this through peeking or simply going to the object definition. Another way to reason through code and understand it is to find something that is easily understood and then trace the cognitive steps backwards to the beginning. Do this multiple times like peeling the layers of an onion. Third, find quality examples that provide good exposure to the principles and assumptions at play. This will force you to integrate the ideas into your mental model. This can be done through intellectus or more rigorously through ratio. intellectus will allow for a fast-thinking model to detect patterns; however, it will create patterns that may or may not be present. Last is to find CS patterns rather than learning Syntax: Oftentimes, when learning to get started in programming. One has a tendency to imitate and copy the work that has been established before. By learning CS patterns then we can learn principles that can be readily and quickly applied to develop new things. This allows ratio. Another way that code comprehension fails it that people don’t practice by doing and playing. Observation/contemplation is when we simply see the code running and we look at the outputs and see what happens when the program is run. It doesn’t imply that you have strong deductive knowledge about how the program works only that you know how to use it. The use of observation allows us to gain knowledge that the experts have and use, but are unable to convey as a result of hidden assumptions. Exposing these hidden assumptions consciously takes a lot of work and therefore it may be easier to implement a habit of observation. This is what happens in art.</p> <p>Try implementing some of the solutions below:</p> <p><img src="/assets/img/knowledge_Venn_Diagram.png" alt="Venn Diagram of knowledge when learning and knowledge from experts"/></p> </li> <li>Practice, Practice, Practice: One should practice regularly and ingest as much hands-on learning as possible to develop experience and familiarity with programming. Otherwise, there is no real understanding of causality and it can lead to faulty mental model.</li> <li>Experiment with failure: Try to see how something will fail and how it will work based on how you interact with the object.</li> <li>Find quality examples: This means making sure the examples and practices you observe are quality. Sometimes it is appropriate to accept or learn a bad practice so that appreciation can be obtained for the right way.</li> </ol> <p>Lastly code comprehension fails because people don’t take the time to find help and appeal to authority. This is when you consult a trusted person or resource like Stack Overflow to determine what is happening. This can also be through reading through the documentation for any functions which is almost always available. Don’t be afraid to ask online and in-person: The first step to learning is accepting the role of a student and then next is being a good one. One tip is to post questions regularly on forms and discussion boards. Resources like Stack Overflow are great for finding solutions while learning something new. Other stack exchange websites can be used as well. Second, read documentation. This means that you take the time necessary to learn something and then integrate as part of your mental model for creating a solution. Third, is to maintain awareness by consistently keeping up with how understanding is being developed and applied throughout the programming community. This means signing up for blogs, email lists, and conferences. They can offer the ability to update who one should appeal to for authority.</p>]]></content><author><name></name></author><category term="jekyll"/><category term="update"/><summary type="html"><![CDATA[Goal]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://phgandhi02.github.io/blog/2026/first-post/" rel="alternate" type="text/html" title="Welcome to Jekyll!"/><published>2026-09-17T02:43:26+00:00</published><updated>2026-09-17T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/first-post</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/first-post/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p> <p>Jekyll requires blog post files to be named according to the following format:</p> <p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p> <p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p> <p>Jekyll also offers powerful support for code snippets:</p> <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> <span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span> <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span> <span class="k">end</span> <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://phgandhi02.github.io/feed.xml" rel="self" type="application/atom+xml"/><link href="https://phgandhi02.github.io/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-10-13T15:09:13+00:00</updated><id>https://phgandhi02.github.io/feed.xml</id><title type="html">Prem’s World</title><subtitle>My personal website with a blog mostly focused on robotics. </subtitle><entry><title type="html">Trying to start a new habit</title><link href="https://phgandhi02.github.io/blog/2026/starting-new-habit/" rel="alternate" type="text/html" title="Trying to start a new habit"/><published>2026-09-17T17:14:26+00:00</published><updated>2026-09-17T17:14:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/starting-new-habit</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/starting-new-habit/"><![CDATA[<p>This is my second post after yesterday; a result of a new habit I am starting. The goal is to try and write a post everyday so that I can point to something productive I did. Today I spent some time polishing the best man speech I wrote for my friend Luis.</p>]]></content><author><name></name></author><category term="personal"/><summary type="html"><![CDATA[This is my second post after yesterday; a result of a new habit I am starting. The goal is to try and write a post everyday so that I can point to something productive I did. Today I spent some time polishing the best man speech I wrote for my friend Luis.]]></summary></entry><entry><title type="html">Intro to the Modern Python Development Environment</title><link href="https://phgandhi02.github.io/blog/2026/modern-python-env/" rel="alternate" type="text/html" title="Intro to the Modern Python Development Environment"/><published>2026-09-17T02:43:26+00:00</published><updated>2026-09-17T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/modern-python-env</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/modern-python-env/"><![CDATA[<h3 id="goal">Goal</h3> <p>The goal of this essay is to enable the reader to be able to establish a baseline understanding as to code reproducibility in programming and the necessity for creating environments that can be deployed on any platform that may be included in the deployment audience. Additionally, this essays covers the use of tools designed for creating elegant and professional looking code that can be easily transferred from drawing to code and tested to meet performance criteria. This essay is a basic introduction into the principles that guide modern development with an implementation in the Python language. An effort will be make to ensure that this can be applied to other languages when possible.</p> <h3 id="assumptions-that-i-need-to-address">Assumptions that I need to address</h3> <ol> <li>OS principles:</li> <li>Unix style file directory</li> <li>OS processes</li> <li> <p>How is the computer broken down:</p> <p>The computer is broken down into a kernel that connects the hardware with the applications and services that you want to run. The following picture illustrates the point:</p> <p><img src="/assets/img/operating_system_architecture.png" alt="Diagram of software components that make a computer operating system"/></p> </li> </ol> <p>We see that the hardware is all connected to the kernel, in this case Linux kernel, and it will make sure that all the services inside and above can talk to the list of daemons, shells, toolkits, etc. can have resources. Think of it like a broker service.</p> <h1 id="essay">Essay</h1> <p>The goal of this essay is to enable the reader to be able to understand what problems that professional developers, specifically in the context of python developers face. This is for a more general audience as different python developers can varying problems based on their application such as optimization challenges or package management problems. There are more comprehensive ways to cover these and they require a lot of discourse to fully unpack (the unintended pun being that packages are unpacked to have access to their classes, functions, and methods). This essay will cover what problems developers run in the implementation of their ideas into code and the what solutions are used to solve these problems. This is not specific to computer scientists, rather these principles affect all people who perform technical work in the coming years as programming proficiency has developed into an almost universal requirement for any STEM disciplines.</p> <p>The problems that people run into programming generally is code reproducibility, Code Maintenance, Code communication, and code comprehension. The solutions are then applied to these categories based on popularity, ease of use, and applicability. First, code reproducibility problems occur when someone tries to hand another person code and they are not able to set your computer up like theirs. Second, Code Maintenance problems occur when code must be utilized over a period of time outside of immediate use which leads to the problems of making sure the infrastructure still supports the operation of your code. This is especially relevant after some code needs to reconfigured to operate a different way or have additional functionality.</p> <blockquote> <p>Note: that code reproducibility and Code Maintenance are very closely linked which is why it is important that great care is taken in making sure that programs are developed in well organized environments almost like lab experiments.</p> </blockquote> <p>Third, Code communication is when more than one person is working on code then how do you make sure that your change won’t screw up the codebase. Consider the fact that multiple people may be working on different functions that are going to placed in the same document. How can you make sure that the solution that you’ve made still works? Fourth and lastly, code comprehension problems occur when people are unable to understand the code they are presented because it is too complex, foreign, or proper documentation is not available.</p> <p>code reproducibility in the modern world involves using dependencies. This is simply a fact that one must accept since the code you develop will always rely on some other part that must be trusted and understood to whatever degree the application requires. Fortunately, this problem can be documented such that similar to citing you sources; you can specify your dependencies so others can analyze and recreate your work. The issue with code reproducibility is version control for dependencies which is an important problem that requires the use of solutions like package management tools like poetry and Conda for Python. Understanding how to set up and implement dependency management tools and environment management for Python is a topic that can be addressed in a separate article. The second code reproducibility issue is managing environment variable which is crucial for SSH scripting. This is particularly important for a language like Python which has a fair bit of interaction with the CLI (Command Line Interface). The CLI is used to How to start up conda environments|start up conda environments, how to activate package scripts|activate package scripts like Sphinx package (a documentation generator for Python) or poetry for package management. Using tools like Docker can alleviate this problem since it creates a containerization|container that will utilize all the same OS processes as your computer; however, it will create a completely new Unix style file directory and environment variables list. The third issue is file directory setup which is solved by Docker. This means that the way your file explorer or finder app shows your computers file directory is the same. Having a standard file directory is a big problem when your program is trying to figure out what it is running on and use dependencies and information from that computer to run well. Consider where the program should store data or what if it references another file. If you open up Steam then it shows all the games you have, but what if you move the files for your games somewhere else around the computer then it will not be able to find it. You could probably trick your computer by replacing a file with a black file that has the same name and changing the name of the original file. This is a surefire way to have many problems stop working. This assumption that I can find files and data around your computer is crucial for complex problems that involve user interaction. Consider the environment variables list mentioned earlier. This list must be stored somewhere and depending on your OS the location may be different.</p> <p>Code Maintenance is another major issue that some would argue would fall under reproducibility though I focused more on how the code needs to be maintained over time when changes are made or it is modified. Unfortunately, code is similar to a house blueprint where you can modify the drawing after it is finished but then it may affect other parts in ways that you don’t expect. Consider the following two images:</p> <p><img src="/assets/img/mona_lisa.png" alt="Mona Lisa"/> <img src="/assets/img/mona_lisa_mustache.png" alt="Mona Lisa with mustache"/></p> <p>When you add a mustache to the Mona Lisa the have made the picture less cohesive and this can clutter up as you manipulate a program beyond it’s designed functionality.</p> <p>This should be balanced with the DRY principle which says “Don’t Repeat Yourself” ie. try to abstract ideas that repeatedly used into little pieces that you can reuse over an over when you need. This doesn’t mean you turn everything into a perfect pieces. Rather, find stuff that you are doing in a tedious and repetitive way and see if programming it saves you any time. Many times its easier to let it go and not program unless you enjoy it. Creating well maintained, reusable code is a way to make your life easier in the future, especially if the code will be used often or flexibly.</p> <p>Enough justification about Code Maintenance, now it’s time explain some of the types of problems and how they are solved. The main problems that developers face in Code Maintenance is Code Abstraction, code refactorization, and code testing. These three problems are found in the fact that making general solutions to programming problems is hard and oftentimes it’s easy to hardcode or pile things up into one file rather than abstract code into something general.</p> <p>Code Abstraction is when you try to develop abstract representations of your code such as putting a set of commands into a function, class, or script. This means that whenever a set of code does some set of commands then it should be turned into a function. That function can then placed into larger functions such that a more complex feature is executed. Another approach is to use class and then attach methods so that if you have a class then it will contain all the stuff it needs to operate. Have a set of classes then you can put them together into a larger class that will contain all those functions and whatever else it needs.</p> <p>Code Modularity is a concept that allows you to tuck away the details and trust that the solution works when you apply it. Then the only work is about how you use your newly made tool. If you are making a script then that script should do one thing well and if you need to do multiple things then make another and then import both scripts into a common script where they can be used. Code refactorization is also important for maintenance because it means that clean up the code that you’ve written to make sure that it is simple, professional, and elegant. Oftentimes this means that you make rewrite an object so that it is easier to understand when you hand it to someone else or try to write documentation for it. This may mean splitting things up so that they are more general and act more like Lego blocks than welded parts.</p> <p>Refactor means that code is adjusted to work more flexibly while still retaining its intended functionality. Note: this may involve taking a less optimized approach that it more understand and more flexible while understanding the limitations of the code.</p> <p>Code testing is a major point that I want to harp on because it is not talked about enough in teaching python. This is when you implement tests/logic to make sure that your code is robust and you can figure out what went wrong if your code doesn’t work right. This solves a debugging problem by giving diagnostics about what failed and why when you test a software application. unit testing is a specific tool that has been transformed into a methodology called Test-Driven Development. The idea is that you can create simple tests that will tell you if your code is operating the way you want by seeing if the results you pass are as expected or if they are different. This is useful when your code has bugs that don’t result in errors so you end up with a software that is telling you false information that is assumed to be right.</p> <p><code class="language-plaintext highlighter-rouge">X = 1</code></p> <p><code class="language-plaintext highlighter-rouge">y = x + x</code></p> <p><code class="language-plaintext highlighter-rouge">y = 1000</code></p> <p>Integration testing helps to make sure that when various pieces of code, imported modules, and called services all work together as expected. Note that pieces of code, modules, and services can operate without error while still delivering faulty, buggy results. These are more computer intensive than unit tests since it means that various parts of the code will be initialized and then tested. This is crucial for making sure that your code works the way it is supposed to with other code. This only tests whether the pieces work together not if they work together well. Functional testing is testing to focus on how the software accomplishes the business requirements that it was designed to accomplish. If a search app was designed then this kind of testing determine whether people can effectively search from a business or use perspective to accomplish the requirement of enabling people to search effectively. This tests to see if pieces work together well and correctly. End-to-end testing is to test specific use cases that would imitate a user trying to perform some action that is often more complex than simply testing functionality. These kinds of tests are useful but hard to maintain and should not be relied on since this changes often and it hard to develop without existing test infrastructure.</p> <p>The third major problem that developers face is Code communication which is when more than one person is working on code but everyone has to understand what is happening. The question is then how do you make sure that your change won’t screw up the codebase? Consider the fact that multiple people may be working on different functions that are going to placed in the same document. How can you make sure that the solution that you’ve made still works? By using source control and version control like Github, we can solve this problem. source control is important to make sure that the foundation multiple people are building on stays the same. Consider a team of architects decides to work with contractors to build a house. If one architect goes in the middle of the night and changes the plans then this may affect whether the solutions that other architects made will apply. Additionally, the contractors will have to completely redo their work since their solution may no longer be valid. If changes are understood and agreed upon by the entire team then this problem can be averted. This is done by having people copies of an agreed upon assumption/framework and then putting their solution on top. The various solutions are combined and then any errors that result can be resolved though this should be minimal in an ideal case. Another problem is versioning because people may not know what the latest code is. By implementing a versioning tool, people can ensure that they have the latest setup and along with knowing how changes were implemented over various iterations.</p> <p>The last major problem that developers face is code comprehension. This is common because people often jump to asking ChatGPT or searching Stack Overflow for the answer rather than deducing the answer on their own. This can save time but it comes at the expense of understanding and exercise of intellectual faculties which need to be tested and stressed constantly so that we can grow. The first symptom of this is poor documentation. Documentation is crucial for making sure that people can understand your code if they want to go back and understand. Good code is something that people love to go back and use, including yourself. Consider the library OpenCV which has a famously amazing documentation which can walk anyone through how to do object recognition. Below I’ve listed the various kids of documentation. I would recommend looking up some examples. I hope to update this essay with my own example someday.</p> <ol> <li>one-liner documentation : This is when you just put small comments next to your statements to help elucidate what the goal of your command is. This can help you think through what you want to do along with guiding others.</li> <li>function-level documentation: This is documentation that is placed at the top of a series of one-liners. It explains what the overall goal of the following commands is as well as how to use the function. The function can be implemented as a one-liner documentation so we want to understand how to use the function easily but don’t want to read through the details of what happens.</li> <li>class-level documentation: This is documentation that explains what the set of functions/methods is designed to do and what the goal of this collection of functions/methods is. It also explains what the initialization of this class does and how to use it. This should be a higher level description than a compilation of function-level documentation. It should explain how to use the class and the available functions with brief descriptions of what they are for and how to use them.</li> <li> <p>script-level documentation: This is documentation that is designed to explain what the point of the script/library is. This is a high level view of what the code module does and it explains any classes, script-level functions, and script-wide parameters. This allows someone who calls the module into another document to understand what functionality they can gain and what tools are available to do so. This can be something with a summary followed by a fairly lengthy detailed description that shows what the code can do on a functional, goal-oriented level. reasoning: This means applying logic and understanding the cognitive train of thought that it involved with getting from one set of information or assumptions to a conclusion. Reasoning often occurs in a passive sense and it is something that we do fast-thinking; however, something reasoning involves slow-thinking. We can use models to simplify the logical sequence of steps that must be taken to understand a conclusion. This is often expensive to do in reality and it may not be feasible with additional time or cognitive constraints. This can be improved by developing familiarity with reading documentation. Reading documentation can be tedious but repeated exposure and application can create fast-thinking frameworks that enable the ability to understand how code works faster. Additionally, looking at the definition of the variable, function, class, or script that is being called and see how it is defined within the codebase. This means trying to see what the object does and how it works by looking at the way that some has created ie. look at where the function is defined and read through and understand how it works. VS Code offers an easy way to do this through peeking or simply going to the object definition. Another way to reason through code and understand it is to find something that is easily understood and then trace the cognitive steps backwards to the beginning. Do this multiple times like peeling the layers of an onion. Third, find quality examples that provide good exposure to the principles and assumptions at play. This will force you to integrate the ideas into your mental model. This can be done through intellectus or more rigorously through ratio. intellectus will allow for a fast-thinking model to detect patterns; however, it will create patterns that may or may not be present. Last is to find CS patterns rather than learning Syntax: Oftentimes, when learning to get started in programming. One has a tendency to imitate and copy the work that has been established before. By learning CS patterns then we can learn principles that can be readily and quickly applied to develop new things. This allows ratio. Another way that code comprehension fails it that people don’t practice by doing and playing. Observation/contemplation is when we simply see the code running and we look at the outputs and see what happens when the program is run. It doesn’t imply that you have strong deductive knowledge about how the program works only that you know how to use it. The use of observation allows us to gain knowledge that the experts have and use, but are unable to convey as a result of hidden assumptions. Exposing these hidden assumptions consciously takes a lot of work and therefore it may be easier to implement a habit of observation. This is what happens in art.</p> <p>Try implementing some of the solutions below:</p> <p><img src="/assets/img/knowledge_Venn_Diagram.png" alt="Venn Diagram of knowledge when learning and knowledge from experts"/></p> </li> <li>Practice, Practice, Practice: One should practice regularly and ingest as much hands-on learning as possible to develop experience and familiarity with programming. Otherwise, there is no real understanding of causality and it can lead to faulty mental model.</li> <li>Experiment with failure: Try to see how something will fail and how it will work based on how you interact with the object.</li> <li>Find quality examples: This means making sure the examples and practices you observe are quality. Sometimes it is appropriate to accept or learn a bad practice so that appreciation can be obtained for the right way.</li> </ol> <p>Lastly code comprehension fails because people don’t take the time to find help and appeal to authority. This is when you consult a trusted person or resource like Stack Overflow to determine what is happening. This can also be through reading through the documentation for any functions which is almost always available. Don’t be afraid to ask online and in-person: The first step to learning is accepting the role of a student and then next is being a good one. One tip is to post questions regularly on forms and discussion boards. Resources like Stack Overflow are great for finding solutions while learning something new. Other stack exchange websites can be used as well. Second, read documentation. This means that you take the time necessary to learn something and then integrate as part of your mental model for creating a solution. Third, is to maintain awareness by consistently keeping up with how understanding is being developed and applied throughout the programming community. This means signing up for blogs, email lists, and conferences. They can offer the ability to update who one should appeal to for authority.</p>]]></content><author><name></name></author><category term="personal"/><category term="python"/><category term="dev-hints"/><summary type="html"><![CDATA[Goal]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="https://phgandhi02.github.io/blog/2026/first-post/" rel="alternate" type="text/html" title="Welcome to Jekyll!"/><published>2026-09-17T02:43:26+00:00</published><updated>2026-09-17T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/first-post</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/first-post/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p> <p>Jekyll requires blog post files to be named according to the following format:</p> <p><code class="language-plaintext highlighter-rouge">YEAR-MONTH-DAY-title.MARKUP</code></p> <p>Where <code class="language-plaintext highlighter-rouge">YEAR</code> is a four-digit number, <code class="language-plaintext highlighter-rouge">MONTH</code> and <code class="language-plaintext highlighter-rouge">DAY</code> are both two-digit numbers, and <code class="language-plaintext highlighter-rouge">MARKUP</code> is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p> <p>Jekyll also offers powerful support for code snippets:</p> <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> <span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span> <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span> <span class="k">end</span> <span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
 
-<span class="c1"># =&gt; prints 'Hi, Tom' to STDOUT. </span></code></pre></figure> <p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="jekyll"/><category term="update"/><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">PhD Mission Statement</title><link href="https://phgandhi02.github.io/blog/2026/phd-mission-statement/" rel="alternate" type="text/html" title="PhD Mission Statement"/><published>2026-03-15T02:43:26+00:00</published><updated>2026-03-15T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/phd-mission-statement</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/phd-mission-statement/"><![CDATA[<p><img src="/assets/img/medieval_science.png" alt="Medieval scientist being smarter than most scientists today."/></p> <p>I am pursuing a PhD in Industrial Engineering with a focus on implementing sophisticated planning algorithms for robotics in manufacturing environments. I have chosen to pursue the PhD because I am interested in advancing the specific intersection of robotics and manufacturing to enable customized manufacturing, which I believe is the future of manufacturing and will enable people to purchase products that can be beautifully designed and customized to their needs. My career goal is to develop and implement advanced planning algorithms and then apply them to real-world manufacturing problems through the establishment of a consulting business that specializes in enabling customized manufacturing solutions. My key motivation is the love of the impact that these algorithms can have on the manufacturing industry, enabling people and communities to easily purchase beautiful products that would normally be available to rich people. One of the reasons that sustains me to pursue this goal is the possibility that this technology can be used to make churches more beautiful at a reasonable cost, thereby returning to the tradition of beautiful churches that have been lost in the modern era.</p> <p>I expect my outputs to include a PhD thesis, scholarly publications in top-tier journals, and collaborations with industry-partners who are also interested in applying this idea to their manufacturing processes. I hope to create implement these algorithms into robots that can enable customized manufacturing solutions in 2-3 types of manufacturing processes such as milling, assembly, stitching, painting, textile cutting, and object manipulation. I specifically want to focus on the manufacturing of customized furniture, clothing, and church objects such as altars, pews, and other items that can be made more beautiful through the use of advanced planning algorithms. I want to create a turnkey solution that can take a customer’s design input and then generate a plan for the robot to execute, resulting in a customized product that meets the customer’s specifications. I hope to achieve this turnkey solution by implementing the following algorithms: task planning, motion planning, and optimization algorithms that can handle the complexities of customized manufacturing. As part of the prototype, I will develop a user-friendly interface that allows customers to easily input their design specifications and receive a customized product.</p> <p>I plan to achieve these aims within the standard 3-4 year timeframe for a PhD. I will break down my work into 3-month planning chunks, with the first chunk focused on completing a comprehensive literature review and identifying key research gaps in the intersection of robotics and manufacturing. Subsequent chunks will focus on developing and testing algorithms, collaborating with industry partners, and writing up my findings. I will aim to submit my thesis by the end of the 3rd year, allowing for additional time in the 4th year for revisions and final preparations. Throughout this process, I will also seek opportunities to present my work at conferences and publish in scholarly journals to build my professional network and contribute to the field.</p> <ul> <li>I will take the time the start of my PhD in Fall 2025 to focus on identifying all the planning algorithms available and identify the capabilities and constraints of each algorithm.</li> <li>I will take classes to prepare for my qualifier exam in Summer 2026 by taking ISE 517 and ISE 718 which will enable me to have enough background to answer the additive manufacturing and micro/nano-manufacturing questions. I will go over my notes and speak with Dr. Livingston on how to prepare for the automation question.</li> <li>By the time I take the qualifier exam, I want to have an MVP of my research objective statement. The current MVP is to use AI Planning to get a robot to place lego blocks on a 2D grid to construct some image provided by the user. The AI Planner will figure out how to construct the image based on simple actions that it is programmed to do. I will use some AI planning technique to implement this MVP and then iterate on it based on feedback from Dr. Livingston and other experts in the field. <ul> <li>I will have a basic workflow that includes the following steps: <ol> <li>User inputs an image or design specification.</li> <li>AI Planner generates a plan for the robot to execute.</li> <li>Robot executes the plan to create the customized product.</li> <li>Feedback loop for improvements based on user satisfaction and performance metrics.</li> </ol> </li> <li>I will create a report that explains how the MVP works, the algorithms used, and the results obtained. The report will provide a baseline for understanding the direction of my research and how it can be applied to real-world manufacturing problems.</li> </ul> </li> <li>I will have read the Acting, Planning, and Learning book by the time I take the qualifier exam so that I can have a good understanding of the field of AI Planning.</li> <li>In order to understand the field of AI Planning, I will read the following</li> </ul>]]></content><author><name></name></author><category term="faith"/><category term="robotics"/><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">A Catholic History of Robotics</title><link href="https://phgandhi02.github.io/blog/2025/history-robotics/" rel="alternate" type="text/html" title="A Catholic History of Robotics"/><published>2025-12-04T02:43:26+00:00</published><updated>2025-12-04T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2025/history-robotics</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2025/history-robotics/"><![CDATA[<p>======================</p> <p><img src="/assets/img/millefleur_albert_color.jpg" alt="Very Cool Vignette of Albert Magnus"/></p> <p>This post comes after a long period of silence on this blog that I’m sure no one reads. I’m making this post to catalog some of the links that I’ve collected that detail the history of robotics and forward a view of history that I favor even if it involves mythical or ficticious elements because I like them. This blog after all is to highlight things that I like.</p> <p>One of the saints that I considered making my confirmation saint was Albert Magnus because he represents the combination of scientific excellence, great piety, and a man of culture. It draws me to praise and exclaim how our God can raise such amazing people to serve Him. It is also a reminder that through God we can do amazing things. Remember it is a gift of God that Albert received and exercised for the glory of God (AMDG!).</p> <p>I also really like this picture of St. Thomas Aquinas going to destroy the talking robot that St. Albert Magnus constructed to automatically provide answers to questions posed such as theological questions. It goes to show how in the amazing drama of salvation and life in Christ, two men can go about drawing men to Christ in their own unique way and find deep friendship and comradery in it. The master and pupil are brought together to make something beautiful for God (great book btw).</p> <p><img src="/assets/img/albert_magnus_automata-smashed.jpg" alt="St. Thomas Aquinas disassembling the servers"/></p> <p>This <a href="https://brewminate.com/automata-the-long-history-of-robots-in-the-ancient-medieval-and-modern-worlds/">website</a> has an interesting history about how robotics goes further back than the Jetsons. Another website worth consider is <a href="https://www.strangehistory.net/2014/03/07/brazen-heads-and-medieval-robots/">Beachcombings Bizarre History Blog</a> which shows how brazen heads and medieval robots are connected. The coverage about this is quite niche and tantalizes my Catholic pride. The last <a href="https://www.ranksecure.ca/the-mythical-and-unbelievable-history-of-artificial-intelligence/">website</a> shows a more holistic coverage of computing over time with reference to Bl. Raymond Lull who doesn’t get enough attention. Finally, a more academic read can be found <a href="https://academic.oup.com/book/36637/chapter-abstract/321631145?redirectedFrom=fulltext">here</a>.</p>]]></content><author><name></name></author><category term="faith"/><category term="robotics"/><summary type="html"><![CDATA[======================]]></summary></entry><entry><title type="html">Holy Spirit Talk</title><link href="https://phgandhi02.github.io/blog/2025/holy-spirit-talk/" rel="alternate" type="text/html" title="Holy Spirit Talk"/><published>2025-10-18T02:43:26+00:00</published><updated>2025-10-18T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2025/holy-spirit-talk</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2025/holy-spirit-talk/"><![CDATA[<p>Thank you to the Awakening team for selecting me for this topic. This talk is not about abstract ideas and dogmas. I am here to speak to you about how the Holy Spirit gives us new sight. The Holy Spirit powers the spiritual life and it’s a little difficult to see at first; however, with proper care, I believe the Love of God and the Holy Spirit are truly visible to us.</p> <p>First let us pray. The response is: Have mercy on us.</p> <h3 id="opening-prayer">Opening Prayer</h3> <p>(Repeat after each invocation: Have mercy on us)</p> <ul> <li>Spirit of all the forms of grace. R</li> <li>Spirit who scrutinizes the divine depths. R</li> <li>Spirit who prays for us with inexpressible pleading. R</li> <li>Spirit of adoption of the sons of God. R</li> <li>Spirit who appeared over the Disciples in the form of tongues of fire. R</li> <li>Spirit with which the Apostles were filled. R</li> <li>Spirit who gives to each one according to His will. R</li> </ul> <p>Christianity is quite a strange religion if you think about it in our modern context. We, Christians, talk about the Holy Spirit and God’s invisible hand a lot, but it feels like we’re using words that have no meaning. I opened this with the idea that this talk is not about abstract ideas. Rather, it is about the power which drives the Body of Christ. For example, why should I believe in the Holy Spirit? Can anyone explain to me what a spirit is? I’ll give you a moment to consider [pause of a couple seconds]. What is a spirit?</p> <p>Imagine telling your classmates that their life is guided and influenced by spirits and they should listen to the good ones. Better yet, there’s an all-powerful, all-knowing, all-good spirit hiding inside you and every other person who undergoes this water ritual called Baptism, but if I cut you up like a corpse there’s nothing to show for it. Believe me, your classmates will write you off as some religious nut and the nice ones will try to ask a question or two before they silently resign and keep school strictly professional. Nice, isn’t it? The thing you believe in sounds like something that a crazy person would say before family and friends check them into a psych ward. I say this to draw out how radical our belief is and expose the world-turning reality of our faith. We are distant from the strangeness of this reality that we believe partly because we have words that separate us from how striking these beliefs are.</p> <p>Speaking for myself, I knew the Holy Spirit was real when I went through RCIA, but it didn’t feel real until I got baptized this past Easter. If you ask people what they think a spirit is, many would say an invisible force or maybe someone checks the dictionary and says that it’s an immaterial entity or the third person of the Trinity. In fact, this summer I was speaking with a couple of psychics at a coffee shop and the question of what a spirit is naturally came up. I distinctly remember one of the psychics describing spirits as being like “angsty teenagers”. Those answers gesture towards what we believe, but what does it mean for our world to have a Holy Spirit, in a Catholic sense? The dictionary definition of Spirit will not do justice to this question, which is about the personal nature of the Holy Spirit.</p> <p>I want to bring to life the power of the Holy Spirit which is exemplified by Pentecost in the beginning of Acts: “When the day of Pentecost had come, they were all together in one place. And suddenly a sound came from heaven like the rush of a mighty wind, and it filled all the house where they were sitting. And there appeared to them tongues as of fire, distributed and resting on each one of them. And they were all filled with the Holy Spirit and began to speak in other tongues, as the Spirit gave them utterance.” I’ve spoken with Christians of all types and one of my grave fears is that we lose a sense of the mystical and the divine. I want to avoid having a faith that is all material and just empty words to the divine. We need to have sight to see the Love of God.</p> <p>The Holy Spirit is the most mysterious part of the Holy Trinity. There’s a couple of questions that come to my mind such as “What is the Holy Spirit?”, or “How do I know what He looks like in my life?” These are important questions because they force us to dig deeper into our faith. I can say for myself that the Holy Spirit was quite mysterious when I was discerning the faith. For context, I just got baptized and confirmed this past Easter after growing up in a religion foreign to Christianity. It’s interesting how the Holy Spirit has changed my life because it seems a little unbelievable that this invisible thing, crazier yet, a Person has had such an influence on my life. It must be a person because it’s impossible to state all the ways that I have been affected by the Holy Spirit. For myself, I can’t even begin to begin with the ways that my friends have impacted my life from hanging out to helping me in times of need, be it for a test or in hard times. The small, unspoken actions are the things that really have an impact on our life and you can’t tell now until a long time has passed when you begin to notice just how beautiful those actions are.</p> <p>For example, I noticed in college that when my parents were making food, they would always feed me first before feeding themselves. This really struck me because it was never announced and it’s taken 22 years for me to notice it. That’s quite a long time to notice, but that kind of love is silent and gentle. It feels natural and more importantly, it is not a burden. Rather, we take joy in loving. My parents’ joy in feeding me first isn’t visible in the moments when I’m hungry or setting up dinner. However, over time I see the world differently now and I’ve seen a glimpse of that deep love my parents have for me.</p> <p>Another example is when you fall in love with another person. I know that many of you are underclassmen and having been one I know that relationships and getting into them is often on your mind.. Often we love the idea of a relationship because we want to hang out or talk or have an anchor or even the physical touch that just feels comforting. Eventually, all of you will fall in love with someone. What’s interesting is that their appearance changes, but it’s not like that person is physically different. They didn’t do anything special, but that person just seems to sparkle. Nothing material has changed, but the world seems a little different and it’s so difficult to convey because others can see the same thing and glance over. This invisible reality has moved me, though I didn’t realize it till I was older and had more sight to see it. The Holy Spirit loves us in the same way so that we are changed even though the physical world is the same. The Holy Spirit wants to have all YOU and all of YOU!</p> <p>I felt this amazing power of sight again when I was baptized. I would read Scripture and it would just shine in a way that it never had before. There is just this quality to Scripture that makes it so powerful and personal. I can’t explain it, but all I know is I seem to marvel everytime I read it. The point that I’m trying to emphasize is that love changes our sight and God does this acting through the Holy Spirit. Our sight is so strange, because we see all the time; however, when we love truly and deeply our vision changes. The world is both the same and different, same as before and completely new and different.</p> <p>The Holy Spirit is Love Personified. I know that sounds like flowery speech, but it’s true. More importantly, it can change your life should you simply choose to listen to that voice. So far I’ve spoken about who the Holy Spirit is from my perspective and how I’ve grown in understanding. Now, I want to approach it from a narrative perspective because I think that’ll challenge each of you more and we need to look at the reality of our belief straight in the face, otherwise we’ll be found lacking.</p> <p>In a novel by a famous writer, Fyodor Dostoevsky, called Crime and Punishment, one of the main characters is Sonya. For context, Sonya is an innocent and anxious girl who offers her body up for prostitution to feed her family because her father lost her job and she has many step-siblings who starve. Another character offers her family money to survive, but the shame and the scars are still there after the prostitution ends.</p> <p>Sonya is utterly rejected by the world, a world full of normal, ordinary people like you and me. She sells herself to buy food for her starving step-siblings while her father’s inability and despair leads to alcoholism and disputes in the family. Her father ends up spending all the family’s money and there is resentment amongst everyone. [pause for a couple of seconds] That’s a lot, but the point is that Sonya’s world is in chaos and there doesn’t seem to be any hope for this poor woman.</p> <p>Living through such trials, Sonya still loves her father though he is wasted by addiction and sin. This is a difficult task because there is so much that is wrong with him. I remember reading it the first time and thinking he doesn’t deserve any pity. He’s a drunkard. How is it possible that she loves her father though he is riddled with flaws? This is a love that exceeds the power of this world. Yet, she offers herself up for her step-siblings so they may grow and she may diminish. This kind of love is beyond common sense. This kind of love is beyond the wisdom of the educated and well-to-do. She could leave the family behind and focus on herself, but she doesn’t. It would be so easy for her to walk away! The conviction and power that she experiences is not some magic trick or simply because she has more discipline than others. There is some extraordinary factor in this story that is not so obvious to our sight. As I mentioned at the beginning, we have to dig a little deeper to see what’s really happening in Sonya’s life.</p> <p>Sonya is similar to the Biblical Mary Magdalene in a lot of ways; a woman of utter disdain to the world, but beautiful to Christ who heals her and lifts her by and through the Holy Spirit. Mary Magdalene is an outcast who we see weeping upon the feet of Christ, she is then lifted and made to spread the word of the resurrection of our Lord, Jesus Christ. What an honor, she plays such an important role in the story of salvation. We get to see through this story how a broken world is overturned by the power of the Holy Spirit and the Love of Christ. This story spins upon the redemptive power of the Holy Spirit which has real implications for the real world.</p> <p>Sonya is given the power of the Holy Spirit! She experiences freedom that many people in easier situations lack. She serves as the cross upon which the narrative spins because the Holy Spirit operates through her and changes the hearts of many in the story. It’s easy to say that she should’ve done this or that, but we live in a fallen world and tragedies happen. How does she have the strength to support her dysfunctional family when common sense fails?</p> <p>Well, Sonya reads the Bible in secret with her friend. Surely there must be more to the story than a woman who is simply strong enough to support and love her family in tough times. That’s just not how our lives work. How does Sonya have the strength to believe when she knows what she did is wrong? Wouldn’t it be easier to fall away from the faith or better yet, what if the words in the Bible are just words? All these questions pop up unless she (or we) has someThing that she (or we) can draw strength from! It can’t just be a thing though, because things have limitations and what if we get tired. So, It must be someOne! Maybe she can manipulate the words to say that prostitution is permissible and she did something right. Similarly, we could manipulate our thoughts into thinking we sinned for a just cause. But how long can that last before we realize that it doesn’t work? SomeOne has to be able to bring Sonya and us back to the Truth. How does she deal with the constant feeling of impurity or how do we feel after we consistently sin? We need SomeONE to make us feel meaningful. She obviously wouldn’t believe it on her own because the physical world doesn’t say so. SomeONE needs to be higher and more true than the world otherwise we just wouldn’t be convinced to turn from our sinful ways.</p> <p>I’ve covered a lot of material in this talk, so here are a couple of points that I hope you remember if nothing else sticks.</p> <p>The first point is I want you to see how the Holy Spirit changes our perception of the world and just how visible He is in the story of our lives. The Holy Spirit is not just a definition or an idea to remember.</p> <p>The second point is that it’s not in the moment to moment that we see the hand of God. Rather, it is in the weeks, months, years, and totality of our life that we see how God plays a role in making us integral parts of His story. I was able to see how subtle love can be in my own parents who made sure I ate before they did. This subtle love changed my own vision of the world.</p> <p>Lastly, I want us to reflect on how the Holy Spirit powers our own lives in doing the impossible. Like Sonya, despite struggling against impossible odds, we are able to love in an incomprehensible way. The Holy Spirit is not just an invisible truth, but a visible reality. We can love in impossible ways because the Holy Spirit does so already for us!</p> <p>I think it would be good to close in prayer.</p> <h3 id="closing-prayer">Closing Prayer</h3> <p>Come, Holy Spirit, come.<br/> And from your celestial home<br/> Shed a ray of light divine.<br/> Come, Father of the poor.<br/> Come, source of all our store.<br/> Come, within our bosoms shine.<br/> You, of comforters the best;<br/> You, the soul’s most welcome guest;<br/> Sweet refreshment here below;<br/> In our labor, rest most sweet;<br/> Grateful coolness in the heat;<br/> Solace in the midst of woe.<br/> O most blessed Light divine,<br/> Shine within these hearts of thine,<br/> And our inmost being fill.<br/> Where you are not, we have naught,<br/> Nothing good in deed or thought,<br/> Nothing free from taint of ill.<br/> Heal our wounds, our strength renew;<br/> On our dryness pour your dew;<br/> Wash the stains of guilt away:<br/> Bend the stubborn heart and will;<br/> Melt the frozen, warm the chill;<br/> Guide the steps that go astray.<br/> On the faithful, who adore<br/> And confess you, evermore<br/> In your sevenfold gift descend;<br/> Give them virtue’s sure reward;<br/> Give them your salvation, Lord;<br/> Give them joys that never end.<br/> Amen. Alleluia.</p> <h2 id="discussion-questions">Discussion Questions</h2> <ul> <li>How has the Holy Spirit changed your vision of the world and those around you?</li> <li>What is a description of the Holy Spirit that makes sense to you?</li> <li>How can we see the Holy Spirit more clearly in our own lives?</li> </ul>]]></content><author><name></name></author><category term="faith"/><summary type="html"><![CDATA[Thank you to the Awakening team for selecting me for this topic. This talk is not about abstract ideas and dogmas. I am here to speak to you about how the Holy Spirit gives us new sight. The Holy Spirit powers the spiritual life and it’s a little difficult to see at first; however, with proper care, I believe the Love of God and the Holy Spirit are truly visible to us.]]></summary></entry><entry><title type="html">Why Mary?</title><link href="https://phgandhi02.github.io/blog/2025/why-mary/" rel="alternate" type="text/html" title="Why Mary?"/><published>2025-10-18T02:43:26+00:00</published><updated>2025-10-18T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2025/why-mary</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2025/why-mary/"><![CDATA[<p>The question of why we need Mary is often a very important question for those of the Protestant persuasion. I find a lot of sympathy with the position because I myself didn’t really find much support on the issue and relied more on my faith that the Catholic Church is the true church of Christ. For some that will not be a satisfactory response and I totally understand as it is not intended to convince. I’ve researched the topic much more extensively below for the benefit of Protestant readers who might be interested in understanding the biblical and theological basis for such a doctrine that would undoubtably cause difficulty for Protestants.</p> <p>I find myself sympathizing with Protestants once more by noticing the critique offered by the deceased Dr. Ben Arbour (Rest in Peace) who said that he found that obligation imposed by the Catholic Church to believe the Marian Dogmas to be unnecessary and divisive. I will link the paper below because I find it to be a very sincere objection to the declaration and definition of the dogmas. If the reader is not aware already, I would suggest refering to some trustworthy source on the definitions and usage of such terms in Catholic contexts. One example I am using is the term dogma which has a specific definition that may not be obvious to a non-Catholic. I hope that the defenses I pose below provide solid ground for dogmas which the church holds so dearly.</p> <p>Mariology is a study that exceeds the study of just the Virgin Mary, but is intimately connected with areas of Christology, ecclesiology, pneumatology, supernatural anthropology, and eschatology [1]. Mary in vertical dimensions by her three-fold relation to the Trinity which she has with the three Divine Persons. She has a horizontal relation with the Church and then to humanity and finally to the universe [1]. The mediation of Mary can be seen through the three ministries of Christ as prophet, king, and priest. The mediation of Mary reflects her maternal priesthood. We can see Mary’s queenship in the context of her Assumption. Finally, we see the prophetic role of Mary through her apparations such as that at Guadalupe or Fatima. Marian apparations are called the “field most neglected, unknown, and least researched, in a scholarly manner,in all of theology [Marian Apparitions: Their Meaning, Their Value, and Their Relevant Message].”</p> <h2 id="biblical-foundations">Biblical Foundations</h2> <p>Mary in her personhood is the New Testament embodied. One example of this is the accomodation of Mary made in Biblical texts like Psalm 87, the analogy of Judith who is honored Jdt 15:9, the bride of the Messianic king (Psalm 45), the bride in the Song of Songs, and the personification of Wisdom who reflects Marian characteristics. We also see that the person of Mary is prepared for in the Old Testament which is replete with references to her if looked in a typological and allegorical way. There is a three-fold way to understand Mary from the Old Testament.* a moral preparation There exists a line of faith and holiness which serves as the template and foundation for which Mary will provide her Magnificat. We can trust that Mary is among the poor and the humble of the Lord as found in Lk 1:48 and Lk 1:52.</p> <ul> <li>a typological preparation Mary is a type of the variety that many of the holy women in the Bible represent. Her conception of a prophet like Hannah is one such example. She is also the preeminent example of the daughter of Zion, the great mothers of Israel, women who experience miraculous births, and the women who bring about the salvation of the People of God.</li> <li>a prophetic preparation We see the prophetic nature of Mary through references to the following passages:* Genesis 3:15 <ul> <li>Isaiah 7:14</li> <li>Micah 5:2-3</li> </ul> </li> </ul> <p>What does St. John Henry Newman write about the immaculate conception?<em>Memo on the Immaculate Conception: <a href="http://www.cin.org/liter/memoimma.html">http://www.cin.org/liter/memoimma.html</a> What does the text mean by maternal priesthood of Mary? What did the medievals say about Mary:</em> St. Bernard of Clairvaux Colloquy of Blessed Virgin and Angel</p> <ul> <li><a href="https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt.html">https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_28.html">https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_28.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_14.html">https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_14.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/she-was-troubled-at-this-saying.html">https://rosariumaureum.blogspot.com/2019/03/she-was-troubled-at-this-saying.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/ave-maria.html">https://rosariumaureum.blogspot.com/2019/03/ave-maria.html</a></li> <li>St. Bernard of Clairvaux In Praise of the Virgin Mother Homily 1</li> <li>Start here: <a href="https://rosariumaureum.blogspot.com/2019/02/st-bernard-of-clairvaux.html">https://rosariumaureum.blogspot.com/2019/02/st-bernard-of-clairvaux.html</a></li> </ul>]]></content><author><name></name></author><category term="faith"/><summary type="html"><![CDATA[The question of why we need Mary is often a very important question for those of the Protestant persuasion. I find a lot of sympathy with the position because I myself didn’t really find much support on the issue and relied more on my faith that the Catholic Church is the true church of Christ. For some that will not be a satisfactory response and I totally understand as it is not intended to convince. I’ve researched the topic much more extensively below for the benefit of Protestant readers who might be interested in understanding the biblical and theological basis for such a doctrine that would undoubtably cause difficulty for Protestants.]]></summary></entry><entry><title type="html">a post with jupyter notebook</title><link href="https://phgandhi02.github.io/blog/2023/jupyter-notebook/" rel="alternate" type="text/html" title="a post with jupyter notebook"/><published>2023-07-04T12:57:00+00:00</published><updated>2023-07-04T12:57:00+00:00</updated><id>https://phgandhi02.github.io/blog/2023/jupyter-notebook</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2023/jupyter-notebook/"><![CDATA[<p>To include a jupyter notebook in a post, you can use the following code:</p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
+<span class="c1"># =&gt; prints 'Hi, Tom' to STDOUT. </span></code></pre></figure> <p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="sample-posts"/><summary type="html"><![CDATA[You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.]]></summary></entry><entry><title type="html">PhD Mission Statement</title><link href="https://phgandhi02.github.io/blog/2026/phd-mission-statement/" rel="alternate" type="text/html" title="PhD Mission Statement"/><published>2026-03-15T02:43:26+00:00</published><updated>2026-03-15T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2026/phd-mission-statement</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2026/phd-mission-statement/"><![CDATA[<p><img src="/assets/img/medieval_science.png" alt="Medieval scientist being smarter than most scientists today."/></p> <p>I am pursuing a PhD in Industrial Engineering with a focus on implementing sophisticated planning algorithms for robotics in manufacturing environments. I have chosen to pursue the PhD because I am interested in advancing the specific intersection of robotics and manufacturing to enable customized manufacturing, which I believe is the future of manufacturing and will enable people to purchase products that can be beautifully designed and customized to their needs. My career goal is to develop and implement advanced planning algorithms and then apply them to real-world manufacturing problems through the establishment of a consulting business that specializes in enabling customized manufacturing solutions. My key motivation is the love of the impact that these algorithms can have on the manufacturing industry, enabling people and communities to easily purchase beautiful products that would normally be available to rich people. One of the reasons that sustains me to pursue this goal is the possibility that this technology can be used to make churches more beautiful at a reasonable cost, thereby returning to the tradition of beautiful churches that have been lost in the modern era.</p> <p>I expect my outputs to include a PhD thesis, scholarly publications in top-tier journals, and collaborations with industry-partners who are also interested in applying this idea to their manufacturing processes. I hope to create implement these algorithms into robots that can enable customized manufacturing solutions in 2-3 types of manufacturing processes such as milling, assembly, stitching, painting, textile cutting, and object manipulation. I specifically want to focus on the manufacturing of customized furniture, clothing, and church objects such as altars, pews, and other items that can be made more beautiful through the use of advanced planning algorithms. I want to create a turnkey solution that can take a customer’s design input and then generate a plan for the robot to execute, resulting in a customized product that meets the customer’s specifications. I hope to achieve this turnkey solution by implementing the following algorithms: task planning, motion planning, and optimization algorithms that can handle the complexities of customized manufacturing. As part of the prototype, I will develop a user-friendly interface that allows customers to easily input their design specifications and receive a customized product.</p> <p>I plan to achieve these aims within the standard 3-4 year timeframe for a PhD. I will break down my work into 3-month planning chunks, with the first chunk focused on completing a comprehensive literature review and identifying key research gaps in the intersection of robotics and manufacturing. Subsequent chunks will focus on developing and testing algorithms, collaborating with industry partners, and writing up my findings. I will aim to submit my thesis by the end of the 3rd year, allowing for additional time in the 4th year for revisions and final preparations. Throughout this process, I will also seek opportunities to present my work at conferences and publish in scholarly journals to build my professional network and contribute to the field.</p> <ul> <li>I will take the time the start of my PhD in Fall 2025 to focus on identifying all the planning algorithms available and identify the capabilities and constraints of each algorithm.</li> <li>I will take classes to prepare for my qualifier exam in Summer 2026 by taking ISE 517 and ISE 718 which will enable me to have enough background to answer the additive manufacturing and micro/nano-manufacturing questions. I will go over my notes and speak with Dr. Livingston on how to prepare for the automation question.</li> <li>By the time I take the qualifier exam, I want to have an MVP of my research objective statement. The current MVP is to use AI Planning to get a robot to place lego blocks on a 2D grid to construct some image provided by the user. The AI Planner will figure out how to construct the image based on simple actions that it is programmed to do. I will use some AI planning technique to implement this MVP and then iterate on it based on feedback from Dr. Livingston and other experts in the field. <ul> <li>I will have a basic workflow that includes the following steps: <ol> <li>User inputs an image or design specification.</li> <li>AI Planner generates a plan for the robot to execute.</li> <li>Robot executes the plan to create the customized product.</li> <li>Feedback loop for improvements based on user satisfaction and performance metrics.</li> </ol> </li> <li>I will create a report that explains how the MVP works, the algorithms used, and the results obtained. The report will provide a baseline for understanding the direction of my research and how it can be applied to real-world manufacturing problems.</li> </ul> </li> <li>I will have read the Acting, Planning, and Learning book by the time I take the qualifier exam so that I can have a good understanding of the field of AI Planning.</li> <li>In order to understand the field of AI Planning, I will read the following</li> </ul>]]></content><author><name></name></author><category term="research"/><category term="research-plans"/><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">A Catholic History of Robotics</title><link href="https://phgandhi02.github.io/blog/2025/history-robotics/" rel="alternate" type="text/html" title="A Catholic History of Robotics"/><published>2025-12-04T02:43:26+00:00</published><updated>2025-12-04T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2025/history-robotics</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2025/history-robotics/"><![CDATA[<p>======================</p> <p><img src="/assets/img/millefleur_albert_color.jpg" alt="Very Cool Vignette of Albert Magnus"/></p> <p>This post comes after a long period of silence on this blog that I’m sure no one reads. I’m making this post to catalog some of the links that I’ve collected that detail the history of robotics and forward a view of history that I favor even if it involves mythical or ficticious elements because I like them. This blog after all is to highlight things that I like.</p> <p>One of the saints that I considered making my confirmation saint was Albert Magnus because he represents the combination of scientific excellence, great piety, and a man of culture. It draws me to praise and exclaim how our God can raise such amazing people to serve Him. It is also a reminder that through God we can do amazing things. Remember it is a gift of God that Albert received and exercised for the glory of God (AMDG!).</p> <p>I also really like this picture of St. Thomas Aquinas going to destroy the talking robot that St. Albert Magnus constructed to automatically provide answers to questions posed such as theological questions. It goes to show how in the amazing drama of salvation and life in Christ, two men can go about drawing men to Christ in their own unique way and find deep friendship and comradery in it. The master and pupil are brought together to make something beautiful for God (great book btw).</p> <p><img src="/assets/img/albert_magnus_automata-smashed.jpg" alt="St. Thomas Aquinas disassembling the servers"/></p> <p>This <a href="https://brewminate.com/automata-the-long-history-of-robots-in-the-ancient-medieval-and-modern-worlds/">website</a> has an interesting history about how robotics goes further back than the Jetsons. Another website worth consider is <a href="https://www.strangehistory.net/2014/03/07/brazen-heads-and-medieval-robots/">Beachcombings Bizarre History Blog</a> which shows how brazen heads and medieval robots are connected. The coverage about this is quite niche and tantalizes my Catholic pride. The last <a href="https://www.ranksecure.ca/the-mythical-and-unbelievable-history-of-artificial-intelligence/">website</a> shows a more holistic coverage of computing over time with reference to Bl. Raymond Lull who doesn’t get enough attention. Finally, a more academic read can be found <a href="https://academic.oup.com/book/36637/chapter-abstract/321631145?redirectedFrom=fulltext">here</a>.</p>]]></content><author><name></name></author><category term="faith"/><category term="robotics"/><summary type="html"><![CDATA[======================]]></summary></entry><entry><title type="html">Holy Spirit Talk</title><link href="https://phgandhi02.github.io/blog/2025/holy-spirit-talk/" rel="alternate" type="text/html" title="Holy Spirit Talk"/><published>2025-10-18T02:43:26+00:00</published><updated>2025-10-18T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2025/holy-spirit-talk</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2025/holy-spirit-talk/"><![CDATA[<p>Thank you to the Awakening team for selecting me for this topic. This talk is not about abstract ideas and dogmas. I am here to speak to you about how the Holy Spirit gives us new sight. The Holy Spirit powers the spiritual life and it’s a little difficult to see at first; however, with proper care, I believe the Love of God and the Holy Spirit are truly visible to us.</p> <p>First let us pray. The response is: Have mercy on us.</p> <h3 id="opening-prayer">Opening Prayer</h3> <p>(Repeat after each invocation: Have mercy on us)</p> <ul> <li>Spirit of all the forms of grace. R</li> <li>Spirit who scrutinizes the divine depths. R</li> <li>Spirit who prays for us with inexpressible pleading. R</li> <li>Spirit of adoption of the sons of God. R</li> <li>Spirit who appeared over the Disciples in the form of tongues of fire. R</li> <li>Spirit with which the Apostles were filled. R</li> <li>Spirit who gives to each one according to His will. R</li> </ul> <p>Christianity is quite a strange religion if you think about it in our modern context. We, Christians, talk about the Holy Spirit and God’s invisible hand a lot, but it feels like we’re using words that have no meaning. I opened this with the idea that this talk is not about abstract ideas. Rather, it is about the power which drives the Body of Christ. For example, why should I believe in the Holy Spirit? Can anyone explain to me what a spirit is? I’ll give you a moment to consider [pause of a couple seconds]. What is a spirit?</p> <p>Imagine telling your classmates that their life is guided and influenced by spirits and they should listen to the good ones. Better yet, there’s an all-powerful, all-knowing, all-good spirit hiding inside you and every other person who undergoes this water ritual called Baptism, but if I cut you up like a corpse there’s nothing to show for it. Believe me, your classmates will write you off as some religious nut and the nice ones will try to ask a question or two before they silently resign and keep school strictly professional. Nice, isn’t it? The thing you believe in sounds like something that a crazy person would say before family and friends check them into a psych ward. I say this to draw out how radical our belief is and expose the world-turning reality of our faith. We are distant from the strangeness of this reality that we believe partly because we have words that separate us from how striking these beliefs are.</p> <p>Speaking for myself, I knew the Holy Spirit was real when I went through RCIA, but it didn’t feel real until I got baptized this past Easter. If you ask people what they think a spirit is, many would say an invisible force or maybe someone checks the dictionary and says that it’s an immaterial entity or the third person of the Trinity. In fact, this summer I was speaking with a couple of psychics at a coffee shop and the question of what a spirit is naturally came up. I distinctly remember one of the psychics describing spirits as being like “angsty teenagers”. Those answers gesture towards what we believe, but what does it mean for our world to have a Holy Spirit, in a Catholic sense? The dictionary definition of Spirit will not do justice to this question, which is about the personal nature of the Holy Spirit.</p> <p>I want to bring to life the power of the Holy Spirit which is exemplified by Pentecost in the beginning of Acts: “When the day of Pentecost had come, they were all together in one place. And suddenly a sound came from heaven like the rush of a mighty wind, and it filled all the house where they were sitting. And there appeared to them tongues as of fire, distributed and resting on each one of them. And they were all filled with the Holy Spirit and began to speak in other tongues, as the Spirit gave them utterance.” I’ve spoken with Christians of all types and one of my grave fears is that we lose a sense of the mystical and the divine. I want to avoid having a faith that is all material and just empty words to the divine. We need to have sight to see the Love of God.</p> <p>The Holy Spirit is the most mysterious part of the Holy Trinity. There’s a couple of questions that come to my mind such as “What is the Holy Spirit?”, or “How do I know what He looks like in my life?” These are important questions because they force us to dig deeper into our faith. I can say for myself that the Holy Spirit was quite mysterious when I was discerning the faith. For context, I just got baptized and confirmed this past Easter after growing up in a religion foreign to Christianity. It’s interesting how the Holy Spirit has changed my life because it seems a little unbelievable that this invisible thing, crazier yet, a Person has had such an influence on my life. It must be a person because it’s impossible to state all the ways that I have been affected by the Holy Spirit. For myself, I can’t even begin to begin with the ways that my friends have impacted my life from hanging out to helping me in times of need, be it for a test or in hard times. The small, unspoken actions are the things that really have an impact on our life and you can’t tell now until a long time has passed when you begin to notice just how beautiful those actions are.</p> <p>For example, I noticed in college that when my parents were making food, they would always feed me first before feeding themselves. This really struck me because it was never announced and it’s taken 22 years for me to notice it. That’s quite a long time to notice, but that kind of love is silent and gentle. It feels natural and more importantly, it is not a burden. Rather, we take joy in loving. My parents’ joy in feeding me first isn’t visible in the moments when I’m hungry or setting up dinner. However, over time I see the world differently now and I’ve seen a glimpse of that deep love my parents have for me.</p> <p>Another example is when you fall in love with another person. I know that many of you are underclassmen and having been one I know that relationships and getting into them is often on your mind.. Often we love the idea of a relationship because we want to hang out or talk or have an anchor or even the physical touch that just feels comforting. Eventually, all of you will fall in love with someone. What’s interesting is that their appearance changes, but it’s not like that person is physically different. They didn’t do anything special, but that person just seems to sparkle. Nothing material has changed, but the world seems a little different and it’s so difficult to convey because others can see the same thing and glance over. This invisible reality has moved me, though I didn’t realize it till I was older and had more sight to see it. The Holy Spirit loves us in the same way so that we are changed even though the physical world is the same. The Holy Spirit wants to have all YOU and all of YOU!</p> <p>I felt this amazing power of sight again when I was baptized. I would read Scripture and it would just shine in a way that it never had before. There is just this quality to Scripture that makes it so powerful and personal. I can’t explain it, but all I know is I seem to marvel everytime I read it. The point that I’m trying to emphasize is that love changes our sight and God does this acting through the Holy Spirit. Our sight is so strange, because we see all the time; however, when we love truly and deeply our vision changes. The world is both the same and different, same as before and completely new and different.</p> <p>The Holy Spirit is Love Personified. I know that sounds like flowery speech, but it’s true. More importantly, it can change your life should you simply choose to listen to that voice. So far I’ve spoken about who the Holy Spirit is from my perspective and how I’ve grown in understanding. Now, I want to approach it from a narrative perspective because I think that’ll challenge each of you more and we need to look at the reality of our belief straight in the face, otherwise we’ll be found lacking.</p> <p>In a novel by a famous writer, Fyodor Dostoevsky, called Crime and Punishment, one of the main characters is Sonya. For context, Sonya is an innocent and anxious girl who offers her body up for prostitution to feed her family because her father lost her job and she has many step-siblings who starve. Another character offers her family money to survive, but the shame and the scars are still there after the prostitution ends.</p> <p>Sonya is utterly rejected by the world, a world full of normal, ordinary people like you and me. She sells herself to buy food for her starving step-siblings while her father’s inability and despair leads to alcoholism and disputes in the family. Her father ends up spending all the family’s money and there is resentment amongst everyone. [pause for a couple of seconds] That’s a lot, but the point is that Sonya’s world is in chaos and there doesn’t seem to be any hope for this poor woman.</p> <p>Living through such trials, Sonya still loves her father though he is wasted by addiction and sin. This is a difficult task because there is so much that is wrong with him. I remember reading it the first time and thinking he doesn’t deserve any pity. He’s a drunkard. How is it possible that she loves her father though he is riddled with flaws? This is a love that exceeds the power of this world. Yet, she offers herself up for her step-siblings so they may grow and she may diminish. This kind of love is beyond common sense. This kind of love is beyond the wisdom of the educated and well-to-do. She could leave the family behind and focus on herself, but she doesn’t. It would be so easy for her to walk away! The conviction and power that she experiences is not some magic trick or simply because she has more discipline than others. There is some extraordinary factor in this story that is not so obvious to our sight. As I mentioned at the beginning, we have to dig a little deeper to see what’s really happening in Sonya’s life.</p> <p>Sonya is similar to the Biblical Mary Magdalene in a lot of ways; a woman of utter disdain to the world, but beautiful to Christ who heals her and lifts her by and through the Holy Spirit. Mary Magdalene is an outcast who we see weeping upon the feet of Christ, she is then lifted and made to spread the word of the resurrection of our Lord, Jesus Christ. What an honor, she plays such an important role in the story of salvation. We get to see through this story how a broken world is overturned by the power of the Holy Spirit and the Love of Christ. This story spins upon the redemptive power of the Holy Spirit which has real implications for the real world.</p> <p>Sonya is given the power of the Holy Spirit! She experiences freedom that many people in easier situations lack. She serves as the cross upon which the narrative spins because the Holy Spirit operates through her and changes the hearts of many in the story. It’s easy to say that she should’ve done this or that, but we live in a fallen world and tragedies happen. How does she have the strength to support her dysfunctional family when common sense fails?</p> <p>Well, Sonya reads the Bible in secret with her friend. Surely there must be more to the story than a woman who is simply strong enough to support and love her family in tough times. That’s just not how our lives work. How does Sonya have the strength to believe when she knows what she did is wrong? Wouldn’t it be easier to fall away from the faith or better yet, what if the words in the Bible are just words? All these questions pop up unless she (or we) has someThing that she (or we) can draw strength from! It can’t just be a thing though, because things have limitations and what if we get tired. So, It must be someOne! Maybe she can manipulate the words to say that prostitution is permissible and she did something right. Similarly, we could manipulate our thoughts into thinking we sinned for a just cause. But how long can that last before we realize that it doesn’t work? SomeOne has to be able to bring Sonya and us back to the Truth. How does she deal with the constant feeling of impurity or how do we feel after we consistently sin? We need SomeONE to make us feel meaningful. She obviously wouldn’t believe it on her own because the physical world doesn’t say so. SomeONE needs to be higher and more true than the world otherwise we just wouldn’t be convinced to turn from our sinful ways.</p> <p>I’ve covered a lot of material in this talk, so here are a couple of points that I hope you remember if nothing else sticks.</p> <p>The first point is I want you to see how the Holy Spirit changes our perception of the world and just how visible He is in the story of our lives. The Holy Spirit is not just a definition or an idea to remember.</p> <p>The second point is that it’s not in the moment to moment that we see the hand of God. Rather, it is in the weeks, months, years, and totality of our life that we see how God plays a role in making us integral parts of His story. I was able to see how subtle love can be in my own parents who made sure I ate before they did. This subtle love changed my own vision of the world.</p> <p>Lastly, I want us to reflect on how the Holy Spirit powers our own lives in doing the impossible. Like Sonya, despite struggling against impossible odds, we are able to love in an incomprehensible way. The Holy Spirit is not just an invisible truth, but a visible reality. We can love in impossible ways because the Holy Spirit does so already for us!</p> <p>I think it would be good to close in prayer.</p> <h3 id="closing-prayer">Closing Prayer</h3> <p>Come, Holy Spirit, come.<br/> And from your celestial home<br/> Shed a ray of light divine.<br/> Come, Father of the poor.<br/> Come, source of all our store.<br/> Come, within our bosoms shine.<br/> You, of comforters the best;<br/> You, the soul’s most welcome guest;<br/> Sweet refreshment here below;<br/> In our labor, rest most sweet;<br/> Grateful coolness in the heat;<br/> Solace in the midst of woe.<br/> O most blessed Light divine,<br/> Shine within these hearts of thine,<br/> And our inmost being fill.<br/> Where you are not, we have naught,<br/> Nothing good in deed or thought,<br/> Nothing free from taint of ill.<br/> Heal our wounds, our strength renew;<br/> On our dryness pour your dew;<br/> Wash the stains of guilt away:<br/> Bend the stubborn heart and will;<br/> Melt the frozen, warm the chill;<br/> Guide the steps that go astray.<br/> On the faithful, who adore<br/> And confess you, evermore<br/> In your sevenfold gift descend;<br/> Give them virtue’s sure reward;<br/> Give them your salvation, Lord;<br/> Give them joys that never end.<br/> Amen. Alleluia.</p> <h2 id="discussion-questions">Discussion Questions</h2> <ul> <li>How has the Holy Spirit changed your vision of the world and those around you?</li> <li>What is a description of the Holy Spirit that makes sense to you?</li> <li>How can we see the Holy Spirit more clearly in our own lives?</li> </ul>]]></content><author><name></name></author><category term="faith"/><category term="holy-spirit"/><category term="speech"/><summary type="html"><![CDATA[Thank you to the Awakening team for selecting me for this topic. This talk is not about abstract ideas and dogmas. I am here to speak to you about how the Holy Spirit gives us new sight. The Holy Spirit powers the spiritual life and it’s a little difficult to see at first; however, with proper care, I believe the Love of God and the Holy Spirit are truly visible to us.]]></summary></entry><entry><title type="html">Why Mary?</title><link href="https://phgandhi02.github.io/blog/2025/why-mary/" rel="alternate" type="text/html" title="Why Mary?"/><published>2025-10-18T02:43:26+00:00</published><updated>2025-10-18T02:43:26+00:00</updated><id>https://phgandhi02.github.io/blog/2025/why-mary</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2025/why-mary/"><![CDATA[<p>The question of why we need Mary is often a very important question for those of the Protestant persuasion. I find a lot of sympathy with the position because I myself didn’t really find much support on the issue and relied more on my faith that the Catholic Church is the true church of Christ. For some that will not be a satisfactory response and I totally understand as it is not intended to convince. I’ve researched the topic much more extensively below for the benefit of Protestant readers who might be interested in understanding the biblical and theological basis for such a doctrine that would undoubtably cause difficulty for Protestants.</p> <p>I find myself sympathizing with Protestants once more by noticing the critique offered by the deceased Dr. Ben Arbour (Rest in Peace) who said that he found that obligation imposed by the Catholic Church to believe the Marian Dogmas to be unnecessary and divisive. I will link the paper below because I find it to be a very sincere objection to the declaration and definition of the dogmas. If the reader is not aware already, I would suggest refering to some trustworthy source on the definitions and usage of such terms in Catholic contexts. One example I am using is the term dogma which has a specific definition that may not be obvious to a non-Catholic. I hope that the defenses I pose below provide solid ground for dogmas which the church holds so dearly.</p> <p>Mariology is a study that exceeds the study of just the Virgin Mary, but is intimately connected with areas of Christology, ecclesiology, pneumatology, supernatural anthropology, and eschatology [1]. Mary in vertical dimensions by her three-fold relation to the Trinity which she has with the three Divine Persons. She has a horizontal relation with the Church and then to humanity and finally to the universe [1]. The mediation of Mary can be seen through the three ministries of Christ as prophet, king, and priest. The mediation of Mary reflects her maternal priesthood. We can see Mary’s queenship in the context of her Assumption. Finally, we see the prophetic role of Mary through her apparations such as that at Guadalupe or Fatima. Marian apparations are called the “field most neglected, unknown, and least researched, in a scholarly manner,in all of theology [Marian Apparitions: Their Meaning, Their Value, and Their Relevant Message].”</p> <h2 id="biblical-foundations">Biblical Foundations</h2> <p>Mary in her personhood is the New Testament embodied. One example of this is the accomodation of Mary made in Biblical texts like Psalm 87, the analogy of Judith who is honored Jdt 15:9, the bride of the Messianic king (Psalm 45), the bride in the Song of Songs, and the personification of Wisdom who reflects Marian characteristics. We also see that the person of Mary is prepared for in the Old Testament which is replete with references to her if looked in a typological and allegorical way. There is a three-fold way to understand Mary from the Old Testament.* a moral preparation There exists a line of faith and holiness which serves as the template and foundation for which Mary will provide her Magnificat. We can trust that Mary is among the poor and the humble of the Lord as found in Lk 1:48 and Lk 1:52.</p> <ul> <li>a typological preparation Mary is a type of the variety that many of the holy women in the Bible represent. Her conception of a prophet like Hannah is one such example. She is also the preeminent example of the daughter of Zion, the great mothers of Israel, women who experience miraculous births, and the women who bring about the salvation of the People of God.</li> <li>a prophetic preparation We see the prophetic nature of Mary through references to the following passages:* Genesis 3:15 <ul> <li>Isaiah 7:14</li> <li>Micah 5:2-3</li> </ul> </li> </ul> <p>What does St. John Henry Newman write about the immaculate conception?<em>Memo on the Immaculate Conception: <a href="http://www.cin.org/liter/memoimma.html">http://www.cin.org/liter/memoimma.html</a> What does the text mean by maternal priesthood of Mary? What did the medievals say about Mary:</em> St. Bernard of Clairvaux Colloquy of Blessed Virgin and Angel</p> <ul> <li><a href="https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt.html">https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_28.html">https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_28.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_14.html">https://rosariumaureum.blogspot.com/2019/03/colloquy-of-blessed-virgin-and-angel-pt\_14.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/she-was-troubled-at-this-saying.html">https://rosariumaureum.blogspot.com/2019/03/she-was-troubled-at-this-saying.html</a></li> <li><a href="https://rosariumaureum.blogspot.com/2019/03/ave-maria.html">https://rosariumaureum.blogspot.com/2019/03/ave-maria.html</a></li> <li>St. Bernard of Clairvaux In Praise of the Virgin Mother Homily 1</li> <li>Start here: <a href="https://rosariumaureum.blogspot.com/2019/02/st-bernard-of-clairvaux.html">https://rosariumaureum.blogspot.com/2019/02/st-bernard-of-clairvaux.html</a></li> </ul>]]></content><author><name></name></author><category term="faith"/><category term="apologetics"/><category term="Mariology"/><summary type="html"><![CDATA[The question of why we need Mary is often a very important question for those of the Protestant persuasion. I find a lot of sympathy with the position because I myself didn’t really find much support on the issue and relied more on my faith that the Catholic Church is the true church of Christ. For some that will not be a satisfactory response and I totally understand as it is not intended to convince. I’ve researched the topic much more extensively below for the benefit of Protestant readers who might be interested in understanding the biblical and theological basis for such a doctrine that would undoubtably cause difficulty for Protestants.]]></summary></entry><entry><title type="html">a post with jupyter notebook</title><link href="https://phgandhi02.github.io/blog/2023/jupyter-notebook/" rel="alternate" type="text/html" title="a post with jupyter notebook"/><published>2023-07-04T12:57:00+00:00</published><updated>2023-07-04T12:57:00+00:00</updated><id>https://phgandhi02.github.io/blog/2023/jupyter-notebook</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2023/jupyter-notebook/"><![CDATA[<p>To include a jupyter notebook in a post, you can use the following code:</p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{::nomarkdown}
 <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">jupyter_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'assets/jupyter/blog.ipynb'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">%}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">notebook_exists</span><span class="w"> </span><span class="cp">%}{%</span><span class="w"> </span><span class="nt">file_exists</span><span class="w"> </span>assets/jupyter/blog.ipynb<span class="w"> </span><span class="cp">%}{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="cp">%}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">notebook_exists</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'true'</span><span class="w"> </span><span class="cp">%}</span>
@@ -9,4 +9,1022 @@
   &lt;p&gt;Sorry, the notebook you are looking for does not exist.&lt;/p&gt;
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
 {:/nomarkdown}
-</code></pre></div></div> <p>Let’s break it down: this is possible thanks to <a href="https://github.com/red-data-tools/jekyll-jupyter-notebook">Jekyll Jupyter Notebook plugin</a> that allows you to embed jupyter notebooks in your posts. It basically calls <a href="https://nbconvert.readthedocs.io/en/latest/usage.html#convert-html"><code class="language-plaintext highlighter-rouge">jupyter nbconvert --to html</code></a> to convert the notebook to an html page and then includes it in the post. Since <a href="https://jekyllrb.com/docs/configuration/markdown/">Kramdown</a> is the default Markdown renderer for Jekyll, we need to surround the call to the plugin with the <a href="https://kramdown.gettalong.org/syntax.html#extensions">::nomarkdown</a> tag so that it stops processing this part with Kramdown and outputs the content as-is.</p> <p>The plugin takes as input the path to the notebook, but it assumes the file exists. If you want to check if the file exists before calling the plugin, you can use the <code class="language-plaintext highlighter-rouge">file_exists</code> filter. This avoids getting a 404 error from the plugin and ending up displaying the main page inside of it instead. If the file does not exist, you can output a message to the user. The code displayed above outputs the following:</p> <div class="jupyter-notebook" style="position: relative; width: 100%; margin: 0 auto;"> <div class="jupyter-notebook-iframe-container"> <iframe src="/assets/jupyter/blog.ipynb.html" style="position: absolute; top: 0; left: 0; border-style: none;" width="100%" height="100%" onload="this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'"></iframe> </div> </div> <p>Note that the jupyter notebook supports both light and dark themes.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="jupyter"/><summary type="html"><![CDATA[an example of a blog post with jupyter notebook]]></summary></entry></feed>
+</code></pre></div></div> <p>Let’s break it down: this is possible thanks to <a href="https://github.com/red-data-tools/jekyll-jupyter-notebook">Jekyll Jupyter Notebook plugin</a> that allows you to embed jupyter notebooks in your posts. It basically calls <a href="https://nbconvert.readthedocs.io/en/latest/usage.html#convert-html"><code class="language-plaintext highlighter-rouge">jupyter nbconvert --to html</code></a> to convert the notebook to an html page and then includes it in the post. Since <a href="https://jekyllrb.com/docs/configuration/markdown/">Kramdown</a> is the default Markdown renderer for Jekyll, we need to surround the call to the plugin with the <a href="https://kramdown.gettalong.org/syntax.html#extensions">::nomarkdown</a> tag so that it stops processing this part with Kramdown and outputs the content as-is.</p> <p>The plugin takes as input the path to the notebook, but it assumes the file exists. If you want to check if the file exists before calling the plugin, you can use the <code class="language-plaintext highlighter-rouge">file_exists</code> filter. This avoids getting a 404 error from the plugin and ending up displaying the main page inside of it instead. If the file does not exist, you can output a message to the user. The code displayed above outputs the following:</p> <div class="jupyter-notebook" style="position: relative; width: 100%; margin: 0 auto;"> <div class="jupyter-notebook-iframe-container"> <iframe src="/assets/jupyter/blog.ipynb.html" style="position: absolute; top: 0; left: 0; border-style: none;" width="100%" height="100%" onload="this.parentElement.style.paddingBottom = (this.contentWindow.document.documentElement.scrollHeight + 10) + 'px'"></iframe> </div> </div> <p>Note that the jupyter notebook supports both light and dark themes.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="formatting"/><category term="jupyter"/><summary type="html"><![CDATA[an example of a blog post with jupyter notebook]]></summary></entry><entry xml:lang="fa"><title type="html">یک نوشتهٔ راست‌چین</title><link href="https://phgandhi02.github.io/blog/2022/rtl/" rel="alternate" type="text/html" title="یک نوشتهٔ راست‌چین"/><published>2022-10-15T10:00:00+00:00</published><updated>2022-10-15T10:00:00+00:00</updated><id>https://phgandhi02.github.io/blog/2022/rtl</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2022/rtl/"><![CDATA[<p>این نوشته نمونه‌ای از پشتیبانی زبان‌های راست‌چین در al-folio است. کافی است در front matter صفحه، <code class="language-plaintext highlighter-rouge">lang</code> را روی یکی از زبان‌های راست‌چین بگذارید:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">عنوان نوشته</span>
+<span class="na">lang</span><span class="pi">:</span> <span class="s">fa</span>
+<span class="nn">---</span>
+</code></pre></div></div> <p>افزونهٔ <code class="language-plaintext highlighter-rouge">al_rtl</code> صفت <code class="language-plaintext highlighter-rouge">dir="rtl"</code> را روی عنصر <code class="language-plaintext highlighter-rouge">&lt;html&gt;</code> قرار می‌دهد. چون این صفت روی ریشهٔ سند است، نوار ناوبری، پاورقی و جای نوار پیمایش هم درست می‌شوند — نه فقط متن اصلی.</p> <p>زبان‌های شناخته‌شده به‌صورت پیش‌فرض: عربی، عبری، فارسی، اردو، پشتو، کردی، سندی، اویغوری، دیوهی و چند زبان دیگر. برای تغییر این فهرست:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">al_rtl</span><span class="pi">:</span>
+  <span class="na">langs</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">fa</span><span class="pi">,</span> <span class="nv">ar</span><span class="pi">]</span>
+</code></pre></div></div> <h2 id="کد-و-ریاضیات-چپچین-میمانند">کد و ریاضیات چپ‌چین می‌مانند</h2> <p>کد و فرمول‌ها بدون توجه به زبان متن، چپ‌چین باقی می‌مانند. اگر جهت آن‌ها راست‌چین می‌شد، ترتیب عملگرها و نقطه‌گذاری به‌هم می‌ریخت:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">code</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">lower</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">-</span><span class="sh">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div> <p>فرمول‌ها هم همین‌طور: \(E = mc^2\) و در حالت نمایشی:</p> \[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\] <p>متن انگلیسی درون یک جملهٔ فارسی، مثل The quick brown fox، به‌درستی نمایش داده می‌شود، چون مرورگر خودش الگوریتم دوجهته را اعمال می‌کند.</p>]]></content><author><name></name></author><category term="sample-posts"/><category term="internationalization"/><category term="formatting"/><summary type="html"><![CDATA[نمونه‌ای از پشتیبانی زبان‌های راست‌چین]]></summary></entry><entry><title type="html">a distill-style blog post</title><link href="https://phgandhi02.github.io/blog/2021/distill/" rel="alternate" type="text/html" title="a distill-style blog post"/><published>2021-05-22T00:00:00+00:00</published><updated>2021-05-22T00:00:00+00:00</updated><id>https://phgandhi02.github.io/blog/2021/distill</id><content type="html" xml:base="https://phgandhi02.github.io/blog/2021/distill/"><![CDATA[<h2 id="equations">Equations</h2> <p>This theme supports rendering beautiful math in inline and display modes using <a href="https://www.mathjax.org/">MathJax 3</a> engine. You just need to surround your math expression with <code class="language-plaintext highlighter-rouge">$$</code>, like <code class="language-plaintext highlighter-rouge">$$ E = mc^2 $$</code>. If you leave it inside a paragraph, it will produce an inline expression, just like \(E = mc^2\).</p> <p>In fact, you can also use a single dollar sign <code class="language-plaintext highlighter-rouge">$</code> to create inline formulas, such as <code class="language-plaintext highlighter-rouge">$ E = mc^2 $</code>, which will render as $ E = mc^2 $. This approach provides the same effect during TeX-based compilation, but visually it appears slightly less bold compared to double-dollar signs <code class="language-plaintext highlighter-rouge">$$</code>, making it blend more naturally with surrounding text.</p> <p>To use display mode, again surround your expression with <code class="language-plaintext highlighter-rouge">$$</code> and place it as a separate paragraph. Here is an example:</p> \[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\] <p>Note that MathJax 3 is <a href="https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html">a major re-write of MathJax</a> that brought a significant improvement to the loading and rendering speed.</p> <hr/> <h2 id="citations">Citations</h2> <p>Citations are then used in the article body with the <code class="language-plaintext highlighter-rouge">&lt;d-cite&gt;</code> tag. The key attribute is a reference to the id provided in the bibliography. The key attribute can take multiple ids, separated by commas.</p> <p>The citation is presented inline like this: <d-cite key="gregor2015draw"></d-cite> (a number that displays more information on hover). If you have an appendix, a bibliography is automatically created and populated in it.</p> <p>Distill chose a numerical inline citation style to improve readability of citation dense articles and because many of the benefits of longer citations are obviated by displaying more information on hover. However, we consider it good style to mention author last names if you discuss something at length and it fits into the flow well — the authors are human and it’s nice for them to have the community associate them with their work.</p> <hr/> <h2 id="footnotes">Footnotes</h2> <p>Just wrap the text you would like to show up in a footnote in a <code class="language-plaintext highlighter-rouge">&lt;d-footnote&gt;</code> tag. The number of the footnote will be automatically generated.<d-footnote>This will become a hoverable footnote.</d-footnote></p> <hr/> <h2 id="code-blocks">Code Blocks</h2> <p>Syntax highlighting is provided within <code class="language-plaintext highlighter-rouge">&lt;d-code&gt;</code> tags. An example of inline code snippets: <code class="language-plaintext highlighter-rouge">&lt;d-code language="html"&gt;let x = 10;&lt;/d-code&gt;</code>. For larger blocks of code, add a <code class="language-plaintext highlighter-rouge">block</code> attribute:</p> <d-code block="" language="javascript"> var x = 25; function(x) { return x * x; } </d-code> <p><strong>Note:</strong> <code class="language-plaintext highlighter-rouge">&lt;d-code&gt;</code> blocks do not look good in the dark mode. You can instead use the standard Jekyll syntax highlight with the <code class="language-plaintext highlighter-rouge">highlight</code> liquid tag.</p> <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">return</span> <span class="nx">x</span> <span class="err">\</span><span class="o">*</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure> <p>You can also write standard Markdown code blocks in triple ticks with a language tag, for instance:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">x</span>
+</code></pre></div></div> <hr/> <h2 id="interactive-plots">Interactive Plots</h2> <p>You can add interative plots using plotly + iframes :framed_picture:</p> <div class="l-page"> <iframe src="/assets/plotly/demo.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe> </div> <p>The plot must be generated separately and saved into an HTML file. To generate the plot that you see above, you can use the following code snippet:</p> <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="n">plotly.express</span> <span class="k">as</span> <span class="n">px</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span>
+<span class="sh">'</span><span class="s">https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv</span><span class="sh">'</span>
+<span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="p">.</span><span class="nf">density_mapbox</span><span class="p">(</span>
+<span class="n">df</span><span class="p">,</span>
+<span class="n">lat</span><span class="o">=</span><span class="sh">'</span><span class="s">Latitude</span><span class="sh">'</span><span class="p">,</span>
+<span class="n">lon</span><span class="o">=</span><span class="sh">'</span><span class="s">Longitude</span><span class="sh">'</span><span class="p">,</span>
+<span class="n">z</span><span class="o">=</span><span class="sh">'</span><span class="s">Magnitude</span><span class="sh">'</span><span class="p">,</span>
+<span class="n">radius</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="n">center</span><span class="o">=</span><span class="nf">dict</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">180</span><span class="p">),</span>
+<span class="n">zoom</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="n">mapbox_style</span><span class="o">=</span><span class="sh">"</span><span class="s">carto-positron</span><span class="sh">"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">.</span><span class="nf">write_html</span><span class="p">(</span><span class="sh">'</span><span class="s">assets/plotly/demo.html</span><span class="sh">'</span><span class="p">)</span></code></pre></figure> <hr/> <h2 id="details-boxes">Details boxes</h2> <p>Details boxes are collapsible boxes which hide additional information from the user. They can be added with the <code class="language-plaintext highlighter-rouge">details</code> liquid tag:</p> <details><summary>Click here to know more</summary> <p>Additional details, where math \(2x - 1\) and <code class="language-plaintext highlighter-rouge">code</code> is rendered correctly.</p> </details> <hr/> <h2 id="mermaid">Mermaid</h2> <p>This theme supports creating diagrams directly in markdown using <a href="https://mermaid.js.org/">Mermaid</a>. Mermaid enables users to render flowcharts, sequence diagrams, class diagrams, Gantt charts, and more. Simply embed the diagram syntax within a mermaid code block.</p> <p>To create a Gantt chart, you can use the following syntax:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
+</span><span class="sb">gantt
+    dateFormat  YYYY-MM-DD
+    title A Gantt Diagram
+
+    section Section
+    Task A           :a1, 2025-01-01, 30d
+    Task B           :after a1, 20d
+    Task C           :2025-01-10, 12d</span>
+<span class="p">```</span>
+</code></pre></div></div> <p>And here’s how it will be rendered:</p> <pre><code class="language-mermaid">gantt
+    dateFormat  YYYY-MM-DD
+    title A Gantt Diagram
+
+    section Section
+    Task A           :a1, 2025-01-01, 30d
+    Task B           :after a1, 20d
+    Task C           :2025-01-10, 12d
+</code></pre> <p>Similarly, you can also use it to create beautiful class diagrams:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```mermaid
+classDiagram
+direction LR
+    class Animal {
+        +String species
+        +int age
+        +makeSound()
+    }
+    class Dog {
+        +String breed
+        +bark()
+    }
+    class Cat {
+        +String color
+        +meow()
+    }
+    class Bird {
+        +String wingSpan
+        +fly()
+    }
+    class Owner {
+        +String name
+        +int age
+        +adoptAnimal(Animal animal)
+    }
+
+    Animal &lt;|-- Dog
+    Animal &lt;|-- Cat
+    Animal &lt;|-- Bird
+    Owner "1" --&gt; "0..*" Animal
+
+    Dog : +fetch()
+    Cat : +purr()
+    Bird : +sing()
+```
+</code></pre></div></div> <p>It will be presented as:</p> <pre><code class="language-mermaid">classDiagram
+direction LR
+    class Animal {
+        +String species
+        +int age
+        +makeSound()
+    }
+    class Dog {
+        +String breed
+        +bark()
+    }
+    class Cat {
+        +String color
+        +meow()
+    }
+    class Bird {
+        +String wingSpan
+        +fly()
+    }
+    class Owner {
+        +String name
+        +int age
+        +adoptAnimal(Animal animal)
+    }
+
+    Animal &lt;|-- Dog
+    Animal &lt;|-- Cat
+    Animal &lt;|-- Bird
+    Owner "1" --&gt; "0..*" Animal
+
+    Dog : +fetch()
+    Cat : +purr()
+    Bird : +sing()
+</code></pre> <p>With Mermaid, you can easily add clear and dynamic diagrams to enhance your blog content.</p> <hr/> <h2 id="diff2html">Diff2Html</h2> <p>This theme also supports integrating <a href="https://github.com/rtfpessoa/diff2html">Diff2Html</a>, a tool that beautifully renders code differences (diffs) directly in markdown. Diff2Html is ideal for showcasing code changes, allowing you to clearly present additions, deletions, and modifications. It’s perfect for code reviews, documentation, and tutorials where step-by-step code changes need to be highlighted—you can even introduce changes across multiple files at once.</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">diff2html
+</span><span class="sb">diff --git a/utils/mathUtils.js b/utils/mathUtils.js
+index 3b5f3d1..c7f9b2e 100644
+--- a/utils/mathUtils.js
++++ b/utils/mathUtils.js
+@@ -1,8 +1,12 @@
+-// Basic math utilities
++// Extended math utilities with additional functions
+
+-export function calculateArea(radius) {
+-    const PI = 3.14159;
++export function calculateCircleMetrics(radius) {
++    const PI = Math.PI;
+     const area = PI * radius ** 2;
++    const circumference = 2 * PI * radius;
++
++    if (!isValidRadius(radius)) throw new Error("Invalid radius");
++
+     return { area, circumference };
+ }
+
+-export function validateRadius(radius) {
++export function isValidRadius(radius) {
+     return typeof radius === 'number' &amp;&amp; radius &gt; 0;
+ }
+
+diff --git a/main.js b/main.js
+index 5f6a9c3..b7d4e8f 100644
+--- a/main.js
++++ b/main.js
+@@ -2,9 +2,12 @@
+ import { calculateCircleMetrics } from './utils/mathUtils';
+
+-function displayCircleMetrics(radius) {
+-    const { area } = calculateCircleMetrics(radius);
++function displayCircleMetrics(radius) {
++    const { area, circumference } = calculateCircleMetrics(radius);
+     console.log(`Area: ${area}`);
++    console.log(`Circumference: ${circumference}`);
+ }
+
+-displayCircleMetrics(5);
++try {
++    displayCircleMetrics(5);
++} catch (error) {
++    console.error("Error:", error.message);
++}</span>
+<span class="p">```</span>
+</code></pre></div></div> <p>Here’s how it will look when rendered with Diff2Html:</p> <pre><code class="language-diff2html">diff --git a/utils/mathUtils.js b/utils/mathUtils.js
+index 3b5f3d1..c7f9b2e 100644
+--- a/utils/mathUtils.js
++++ b/utils/mathUtils.js
+@@ -1,8 +1,12 @@
+-// Basic math utilities
++// Extended math utilities with additional functions
+
+-export function calculateArea(radius) {
+-    const PI = 3.14159;
++export function calculateCircleMetrics(radius) {
++    const PI = Math.PI;
+     const area = PI * radius ** 2;
++    const circumference = 2 * PI * radius;
++
++    if (!isValidRadius(radius)) throw new Error("Invalid radius");
++
+     return { area, circumference };
+ }
+
+-export function validateRadius(radius) {
++export function isValidRadius(radius) {
+     return typeof radius === 'number' &amp;&amp; radius &gt; 0;
+ }
+
+diff --git a/main.js b/main.js
+index 5f6a9c3..b7d4e8f 100644
+--- a/main.js
++++ b/main.js
+@@ -2,9 +2,12 @@
+ import { calculateCircleMetrics } from './utils/mathUtils';
+
+-function displayCircleMetrics(radius) {
+-    const { area } = calculateCircleMetrics(radius);
++function displayCircleMetrics(radius) {
++    const { area, circumference } = calculateCircleMetrics(radius);
+     console.log(`Area: ${area}`);
++    console.log(`Circumference: ${circumference}`);
+ }
+
+-displayCircleMetrics(5);
++try {
++    displayCircleMetrics(5);
++} catch (error) {
++    console.error("Error:", error.message);
++}
+</code></pre> <hr/> <h2 id="leaflet">Leaflet</h2> <p><a href="https://leafletjs.com/">Leaflet</a> is created by Ukrainian software engineer <a href="https://agafonkin.com/">Volodymyr Agafonkin</a>, allowing interactive maps to be embedded in webpages. With support for <a href="https://geojson.org/">GeoJSON data</a>, Leaflet allows you to highlight specific regions, making it easy to visualize geographical information in detail.</p> <p>You can use the following code to load map information on <a href="https://www.openstreetmap.org/">OpenStreetMap</a>:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">geojson
+</span><span class="sb">{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Crimea",
+        "popupContent": "Occupied Crimea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.9,
+              45.3
+            ],
+            [
+              36.5,
+              45.3
+            ],
+            [
+              36.5,
+              44.4
+            ],
+            [
+              33.9,
+              44.4
+            ],
+            [
+              33.9,
+              45.3
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Donetsk",
+        "popupContent": "Occupied Donetsk"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              37.5,
+              48.5
+            ],
+            [
+              39.5,
+              48.5
+            ],
+            [
+              39.5,
+              47.5
+            ],
+            [
+              37.5,
+              47.5
+            ],
+            [
+              37.5,
+              48.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Luhansk",
+        "popupContent": "Occupied Luhansk"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              38.5,
+              49.5
+            ],
+            [
+              40.5,
+              49.5
+            ],
+            [
+              40.5,
+              48.5
+            ],
+            [
+              38.5,
+              48.5
+            ],
+            [
+              38.5,
+              49.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kherson",
+        "popupContent": "Occupied Kherson"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.3,
+              47.3
+            ],
+            [
+              34.3,
+              47.3
+            ],
+            [
+              34.3,
+              46.3
+            ],
+            [
+              32.3,
+              46.3
+            ],
+            [
+              32.3,
+              47.3
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zaporizhzhia",
+        "popupContent": "Occupied Zaporizhzhia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.3,
+              48
+            ],
+            [
+              36.3,
+              48
+            ],
+            [
+              36.3,
+              47
+            ],
+            [
+              34.3,
+              47
+            ],
+            [
+              34.3,
+              48
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}</span>
+<span class="p">```</span>
+</code></pre></div></div> <p>The rendered map below highlights the regions of Ukraine that have been illegally occupied by Russia over the years, including Crimea and the four eastern regions:</p> <pre><code class="language-geojson">{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Crimea",
+        "popupContent": "Occupied Crimea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              33.9,
+              45.3
+            ],
+            [
+              36.5,
+              45.3
+            ],
+            [
+              36.5,
+              44.4
+            ],
+            [
+              33.9,
+              44.4
+            ],
+            [
+              33.9,
+              45.3
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Donetsk",
+        "popupContent": "Occupied Donetsk"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              37.5,
+              48.5
+            ],
+            [
+              39.5,
+              48.5
+            ],
+            [
+              39.5,
+              47.5
+            ],
+            [
+              37.5,
+              47.5
+            ],
+            [
+              37.5,
+              48.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Luhansk",
+        "popupContent": "Occupied Luhansk"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              38.5,
+              49.5
+            ],
+            [
+              40.5,
+              49.5
+            ],
+            [
+              40.5,
+              48.5
+            ],
+            [
+              38.5,
+              48.5
+            ],
+            [
+              38.5,
+              49.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Kherson",
+        "popupContent": "Occupied Kherson"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              32.3,
+              47.3
+            ],
+            [
+              34.3,
+              47.3
+            ],
+            [
+              34.3,
+              46.3
+            ],
+            [
+              32.3,
+              46.3
+            ],
+            [
+              32.3,
+              47.3
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zaporizhzhia",
+        "popupContent": "Occupied Zaporizhzhia"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              34.3,
+              48
+            ],
+            [
+              36.3,
+              48
+            ],
+            [
+              36.3,
+              47
+            ],
+            [
+              34.3,
+              47
+            ],
+            [
+              34.3,
+              48
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+</code></pre> <hr/> <h2 id="chartjs-echarts-and-vega-lite">Chartjs, Echarts and Vega-Lite</h2> <p><a href="https://www.chartjs.org/">Chart.js</a> is a versatile JavaScript library for creating responsive and interactive charts. Supporting multiple chart types like bar, line, pie, and radar, it’s an ideal tool for visualizing data directly in webpages.</p> <p>Here’s an example of a JSON-style configuration that creates a bar chart in Chart.js:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```chartjs
+{
+  "type": "bar",
+  "data": {
+    "labels": ["2017", "2018", "2019", "2020", "2021"],
+    "datasets": [
+      {
+        "label": "Population (millions)",
+        "data": [12, 15, 13, 14, 16],
+        "backgroundColor": "rgba(54, 162, 235, 0.6)",
+        "borderColor": "rgba(54, 162, 235, 1)",
+        "borderWidth": 1
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "y": {
+        "beginAtZero": true
+      }
+    }
+  }
+}
+```
+</code></pre></div></div> <p>The rendered bar chart illustrates population data from 2017 to 2021:</p> <pre><code class="language-chartjs">{
+  "type": "bar",
+  "data": {
+    "labels": ["2017", "2018", "2019", "2020", "2021"],
+    "datasets": [
+      {
+        "label": "Population (millions)",
+        "data": [12, 15, 13, 14, 16],
+        "backgroundColor": "rgba(54, 162, 235, 0.6)",
+        "borderColor": "rgba(54, 162, 235, 1)",
+        "borderWidth": 1
+      }
+    ]
+  },
+  "options": {
+    "scales": {
+      "y": {
+        "beginAtZero": true
+      }
+    }
+  }
+}
+</code></pre> <hr/> <p><a href="https://echarts.apache.org/">ECharts</a> is a powerful visualization library from <a href="https://www.apache.org/">Apache</a> that supports a wide range of interactive charts, including more advanced types such as scatter plots, heatmaps, and geographic maps.</p> <p>The following JSON configuration creates a visually enhanced line chart that displays monthly sales data for two products.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```echarts
+{
+  "title": {
+    "text": "Monthly Sales Comparison",
+    "left": "center"
+  },
+  "tooltip": {
+    "trigger": "axis",
+    "backgroundColor": "rgba(50, 50, 50, 0.7)",
+    "borderColor": "#777",
+    "borderWidth": 1,
+    "textStyle": {
+      "color": "#fff"
+    }
+  },
+  "legend": {
+    "data": ["Product A", "Product B"],
+    "top": "10%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "axisLine": {
+      "lineStyle": {
+        "color": "#888"
+      }
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "axisLine": {
+      "lineStyle": {
+        "color": "#888"
+      }
+    },
+    "splitLine": {
+      "lineStyle": {
+        "type": "dashed"
+      }
+    }
+  },
+  "series": [
+    {
+      "name": "Product A",
+      "type": "line",
+      "smooth": true,
+      "data": [820, 932, 901, 934, 1290, 1330, 1320, 1400, 1450, 1500, 1600, 1650],
+      "itemStyle": {
+        "color": "#5470C6"
+      },
+      "lineStyle": {
+        "width": 3
+      },
+      "areaStyle": {
+        "color": {
+          "type": "linear",
+          "x": 0,
+          "y": 0,
+          "x2": 0,
+          "y2": 1,
+          "colorStops": [
+            { "offset": 0, "color": "rgba(84, 112, 198, 0.5)" },
+            { "offset": 1, "color": "rgba(84, 112, 198, 0)" }
+          ]
+        }
+      },
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Product B",
+      "type": "line",
+      "smooth": true,
+      "data": [620, 732, 701, 734, 1090, 1130, 1120, 1200, 1250, 1300, 1400, 1450],
+      "itemStyle": {
+        "color": "#91CC75"
+      },
+      "lineStyle": {
+        "width": 3
+      },
+      "areaStyle": {
+        "color": {
+          "type": "linear",
+          "x": 0,
+          "y": 0,
+          "x2": 0,
+          "y2": 1,
+          "colorStops": [
+            { "offset": 0, "color": "rgba(145, 204, 117, 0.5)" },
+            { "offset": 1, "color": "rgba(145, 204, 117, 0)" }
+          ]
+        }
+      },
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ]
+}
+```
+</code></pre></div></div> <p>The rendered output is shown below, and you can also interact with it using your mouse:</p> <pre><code class="language-echarts">{
+  "title": {
+    "text": "Monthly Sales Comparison",
+    "left": "center"
+  },
+  "tooltip": {
+    "trigger": "axis",
+    "backgroundColor": "rgba(50, 50, 50, 0.7)",
+    "borderColor": "#777",
+    "borderWidth": 1,
+    "textStyle": {
+      "color": "#fff"
+    }
+  },
+  "legend": {
+    "data": ["Product A", "Product B"],
+    "top": "10%"
+  },
+  "xAxis": {
+    "type": "category",
+    "data": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "axisLine": {
+      "lineStyle": {
+        "color": "#888"
+      }
+    }
+  },
+  "yAxis": {
+    "type": "value",
+    "axisLine": {
+      "lineStyle": {
+        "color": "#888"
+      }
+    },
+    "splitLine": {
+      "lineStyle": {
+        "type": "dashed"
+      }
+    }
+  },
+  "series": [
+    {
+      "name": "Product A",
+      "type": "line",
+      "smooth": true,
+      "data": [820, 932, 901, 934, 1290, 1330, 1320, 1400, 1450, 1500, 1600, 1650],
+      "itemStyle": {
+        "color": "#5470C6"
+      },
+      "lineStyle": {
+        "width": 3
+      },
+      "areaStyle": {
+        "color": {
+          "type": "linear",
+          "x": 0,
+          "y": 0,
+          "x2": 0,
+          "y2": 1,
+          "colorStops": [
+            { "offset": 0, "color": "rgba(84, 112, 198, 0.5)" },
+            { "offset": 1, "color": "rgba(84, 112, 198, 0)" }
+          ]
+        }
+      },
+      "emphasis": {
+        "focus": "series"
+      }
+    },
+    {
+      "name": "Product B",
+      "type": "line",
+      "smooth": true,
+      "data": [620, 732, 701, 734, 1090, 1130, 1120, 1200, 1250, 1300, 1400, 1450],
+      "itemStyle": {
+        "color": "#91CC75"
+      },
+      "lineStyle": {
+        "width": 3
+      },
+      "areaStyle": {
+        "color": {
+          "type": "linear",
+          "x": 0,
+          "y": 0,
+          "x2": 0,
+          "y2": 1,
+          "colorStops": [
+            { "offset": 0, "color": "rgba(145, 204, 117, 0.5)" },
+            { "offset": 1, "color": "rgba(145, 204, 117, 0)" }
+          ]
+        }
+      },
+      "emphasis": {
+        "focus": "series"
+      }
+    }
+  ]
+}
+</code></pre> <hr/> <p><a href="https://vega.github.io/vega-lite/">Vega-Lite</a> is a declarative visualization grammar that allows users to create, share, and customize a wide range of interactive data visualizations. The following JSON configuration generates a straightforward bar chart:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```vega_lite
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 400,
+  "height": 200,
+  "padding": 5,
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"category": "A", "value": 28},
+        {"category": "B", "value": 55},
+        {"category": "C", "value": 43},
+        {"category": "D", "value": 91},
+        {"category": "E", "value": 81},
+        {"category": "F", "value": 53},
+        {"category": "G", "value": 19},
+        {"category": "H", "value": 87}
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "domain": {"data": "table", "field": "category"},
+      "range": "width",
+      "padding": 0.1
+    },
+    {
+      "name": "yscale",
+      "type": "linear",
+      "domain": {"data": "table", "field": "value"},
+      "nice": true,
+      "range": "height"
+    }
+  ],
+
+  "axes": [
+    {"orient": "bottom", "scale": "xscale"},
+    {"orient": "left", "scale": "yscale"}
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "category"},
+          "width": {"scale": "xscale", "band": 0.8},
+          "y": {"scale": "yscale", "field": "value"},
+          "y2": {"scale": "yscale", "value": 0},
+          "fill": {"value": "steelblue"}
+        },
+        "update": {
+          "fillOpacity": {"value": 1}
+        },
+        "hover": {
+          "fill": {"value": "orange"}
+        }
+      }
+    }
+  ]
+}
+```
+</code></pre></div></div> <p>The rendered output shows a clean and simple bar chart with a hover effect：</p> <pre><code class="language-vega_lite">{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 400,
+  "height": 200,
+  "padding": 5,
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {"category": "A", "value": 28},
+        {"category": "B", "value": 55},
+        {"category": "C", "value": 43},
+        {"category": "D", "value": 91},
+        {"category": "E", "value": 81},
+        {"category": "F", "value": 53},
+        {"category": "G", "value": 19},
+        {"category": "H", "value": 87}
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "xscale",
+      "type": "band",
+      "domain": {"data": "table", "field": "category"},
+      "range": "width",
+      "padding": 0.1
+    },
+    {
+      "name": "yscale",
+      "type": "linear",
+      "domain": {"data": "table", "field": "value"},
+      "nice": true,
+      "range": "height"
+    }
+  ],
+
+  "axes": [
+    {"orient": "bottom", "scale": "xscale"},
+    {"orient": "left", "scale": "yscale"}
+  ],
+
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "x": {"scale": "xscale", "field": "category"},
+          "width": {"scale": "xscale", "band": 0.8},
+          "y": {"scale": "yscale", "field": "value"},
+          "y2": {"scale": "yscale", "value": 0},
+          "fill": {"value": "steelblue"}
+        },
+        "update": {
+          "fillOpacity": {"value": 1}
+        },
+        "hover": {
+          "fill": {"value": "orange"}
+        }
+      }
+    }
+  ]
+}
+</code></pre> <hr/> <h2 id="tikz">TikZ</h2> <p><a href="https://tikz.net/">TikZ</a> is a powerful LaTeX-based drawing tool powered by <a href="https://tikzjax.com/">TikZJax</a>. You can easily port TikZ drawings from papers, posters, and notes. For example, we can use the following code to illustrate Euler’s formula $ e^{i \theta} = \cos \theta + i \sin \theta $:</p> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/tikz"</span><span class="nt">&gt;</span>
+<span class="se">\b</span>egin{document}
+  <span class="se">\b</span>egin{tikzpicture}
+      <span class="se">\f</span>illdraw[fill=cyan!10, draw=blue, thick] (0,0) circle (2cm);<span class="sb">
+
+      \draw[-&gt;, thick] (-2.5,0) -- (2.5,0) node[right] {Re};
+      \draw[-&gt;, thick] (0,-2.5) -- (0,2.5) node[above] {Im};
+
+      \draw[-&gt;, thick, color=purple] (0,0) -- (1.5,1.5);
+      \node[color=purple] at (1.1, 1.7) {$e^{i\theta}$};
+
+      \draw[thick] (0.7,0) arc (0:45:0.7);
+      \node at (0.9, 0.3) {$\theta$};
+
+      \draw[dashed, color=gray] (1.5,1.5) -- (1.5,0) node[below, black] {$\cos \theta$};
+      \draw[dashed, color=gray] (1.5,1.5) -- (0,1.5) node[left, black] {$\sin \theta$};
+      \node at (2.2, 0) [below] {1};
+      \node at (0, 2.2) [left] {$i$};
+      \node at (1.5,1.5) [above right, color=blue] {$(\cos \theta \, \sin \theta)$};
+</span>  <span class="se">\e</span>nd{tikzpicture}
+<span class="se">\e</span>nd{document}
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div> <p>The rendered output is shown below, displayed as a vector graphic：</p> <script type="text/tikz">
+\begin{document}
+  \begin{tikzpicture}
+      \filldraw[fill=cyan!10, draw=blue, thick] (0,0) circle (2cm);
+
+      \draw[->, thick] (-2.5,0) -- (2.5,0) node[right] {Re};
+      \draw[->, thick] (0,-2.5) -- (0,2.5) node[above] {Im};
+
+      \draw[->, thick, color=purple] (0,0) -- (1.5,1.5);
+      \node[color=purple] at (1.1, 1.7) {$e^{i\theta}$};
+
+      \draw[thick] (0.7,0) arc (0:45:0.7);
+      \node at (0.9, 0.3) {$\theta$};
+
+      \draw[dashed, color=gray] (1.5,1.5) -- (1.5,0) node[below, black] {$\cos \theta$};
+      \draw[dashed, color=gray] (1.5,1.5) -- (0,1.5) node[left, black] {$\sin \theta$};
+      \node at (2.2, 0) [below] {1};
+      \node at (0, 2.2) [left] {$i$};
+      \node at (1.5,1.5) [above right, color=blue] {$(\cos \theta \, \sin \theta)$};
+  \end{tikzpicture}
+\end{document}
+</script> <hr/> <h2 id="typograms">Typograms</h2> <p><a href="https://google.github.io/typograms/">Typograms</a> are a way of combining text and graphics to convey information in a clear and visually engaging manner. Typograms are particularly effective for illustrating simple diagrams, charts, and concept visuals where text and graphics are closely integrated. The following example demonstrates a simple Typogram:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```typograms
+             ___________________
+            /                  /|
+           /__________________/ |
+          |                  |  |
+          |     Distill      |  |
+          |                  |  |
+          |                  | /
+          |__________________|/
+```
+</code></pre></div></div> <p>The rendered output is shown below：</p> <pre><code class="language-typograms">             ___________________
+            /                  /|
+           /__________________/ |
+          |                  |  |
+          |     Distill      |  |
+          |                  |  |
+          |                  | /
+          |__________________|/
+</code></pre> <hr/> <h2 id="layouts">Layouts</h2> <p>The main text column is referred to as the body. It is the assumed layout of any direct descendants of the <code class="language-plaintext highlighter-rouge">d-article</code> element.</p> <div class="fake-img l-body"> <p>.l-body</p> </div> <p>For images you want to display a little larger, try <code class="language-plaintext highlighter-rouge">.l-page</code>:</p> <div class="fake-img l-page"> <p>.l-page</p> </div> <p>All of these have an outset variant if you want to poke out from the body text a little bit. For instance:</p> <div class="fake-img l-body-outset"> <p>.l-body-outset</p> </div> <div class="fake-img l-page-outset"> <p>.l-page-outset</p> </div> <p>Occasionally you’ll want to use the full browser width. For this, use <code class="language-plaintext highlighter-rouge">.l-screen</code>. You can also inset the element a little from the edge of the browser by using the inset variant.</p> <div class="fake-img l-screen"> <p>.l-screen</p> </div> <div class="fake-img l-screen-inset"> <p>.l-screen-inset</p> </div> <p>The final layout is for marginalia, asides, and footnotes. It does not interrupt the normal flow of <code class="language-plaintext highlighter-rouge">.l-body</code> sized text except on mobile screen sizes.</p> <div class="fake-img l-gutter"> <p>.l-gutter</p> </div> <hr/> <h2 id="sidenotes">Sidenotes</h2> <p>Distill supports sidenotes, which are like footnotes but placed in the margin of the page. They are useful for providing additional context or references without interrupting the flow of the main text.</p> <p>There are two main ways to create a sidenote:</p> <p><strong>Using the <code class="language-plaintext highlighter-rouge">&lt;aside&gt;</code> tag:</strong></p> <p>The following code creates a sidenote with <strong><em>distill’s styling</em></strong> in the margin:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;aside&gt;&lt;p&gt;</span>This is a sidenote using aside tag.<span class="nt">&lt;/p&gt;&lt;/aside&gt;</span>
+</code></pre></div></div> <aside><p> This is a sidenote using `&lt;aside&gt;` tag</p> </aside> <p>We can also add images to sidenotes (click on the image to zoom in for a larger version):</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;aside&gt;</span>
+  {% include figure.liquid loading="eager" path="assets/img/rhino.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+  <span class="nt">&lt;p&gt;</span>
+    F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” Science, Medicine, and History: Essays on the Evolution of
+    Scientific Thought and Medical Practice (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s Visual Explanations.
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/aside&gt;</span>
+</code></pre></div></div> <aside> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/rhino-480.webp 480w,/assets/img/rhino-800.webp 800w,/assets/img/rhino-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/rhino.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> <p>F.J. Cole, “The History of Albrecht Dürer’s Rhinoceros in Zoological Literature,” Science, Medicine, and History: Essays on the Evolution of Scientific Thought and Medical Practice (London, 1953), ed. E. Ashworth Underwood, 337-356. From page 71 of Edward Tufte’s Visual Explanations.</p> </aside> <p>Sidenotes can also contain equations and links:</p> <p>In physics, mass–energy equivalence is the relationship between mass and energy in a system’s rest frame. The two differ only by a multiplicative constant and the units of measurement.</p> <aside> <p>This principle is defined by Einstein's famous equation: $E = mc^2$ <a href="https://en.wikipedia.org/wiki/Mass%E2%80%93energy_equivalence" target="_blank">(Source: Wikipedia)</a></p> </aside> <p><strong>Using the <code class="language-plaintext highlighter-rouge">l-gutter</code> class:</strong></p> <p>The following code creates a sidenote with <strong><em>al-folio’s styling</em></strong> in the margin:</p> <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"l-gutter"</span><span class="nt">&gt;&lt;p&gt;</span>This is a sidenote using l-gutter class.<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>
+</code></pre></div></div> <div class="l-gutter"> <p> This is a sidenote using `l-gutter` class. </p> </div> <hr/> <h2 id="other-typography">Other Typography?</h2> <p>Emphasis, aka italics, with <em>asterisks</em> (<code class="language-plaintext highlighter-rouge">*asterisks*</code>) or <em>underscores</em> (<code class="language-plaintext highlighter-rouge">_underscores_</code>).</p> <p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p> <p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p> <p>Strikethrough uses two tildes. <del>Scratch this.</del></p> <ol> <li>First ordered list item</li> <li>Another item ⋅⋅* Unordered sub-list.</li> <li>Actual numbers don’t matter, just that it’s a number ⋅⋅1. Ordered sub-list</li> <li>And another item.</li> </ol> <p>⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we’ll use three here to also align the raw Markdown).</p> <p>⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅ ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅ ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)</p> <ul> <li> <p>Unordered list can use asterisks</p> </li> <li> <p>Or minuses</p> </li> <li> <p>Or pluses</p> </li> </ul> <p><a href="https://www.google.com">I’m an inline-style link</a></p> <p><a href="https://www.google.com" title="Google's Homepage">I’m an inline-style link with title</a></p> <p><a href="https://www.mozilla.org">I’m a reference-style link</a></p> <p><a href="https://slashdot.org">You can use numbers for reference-style link definitions</a></p> <p>Or leave it empty and use the <a href="https://www.reddit.com">link text itself</a>.</p> <p>URLs and URLs in angle brackets will automatically get turned into links. https://www.example.com or <a href="https://www.example.com">https://www.example.com</a> and sometimes example.com (but not on Github, for example).</p> <p>Some text to show that the reference links can follow later.</p> <p>Here’s our logo (hover to see the title text):</p> <p>Inline-style: <img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1"/></p> <p>Reference-style: <img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 2"/></p> <p>Inline <code class="language-plaintext highlighter-rouge">code</code> has <code class="language-plaintext highlighter-rouge">back-ticks around</code> it.</p> <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">JavaScript syntax highlighting</span><span class="dl">"</span><span class="p">;</span>
+<span class="nf">alert</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
+</code></pre></div></div> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">s</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python syntax highlighting</span><span class="sh">"</span>
+<span class="k">print</span> <span class="n">s</span>
+</code></pre></div></div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>No language indicated, so no syntax highlighting.
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+</code></pre></div></div> <p>Colons can be used to align columns.</p> <table> <thead> <tr> <th>Tables</th> <th style="text-align: center">Are</th> <th style="text-align: right">Cool</th> </tr> </thead> <tbody> <tr> <td>col 3 is</td> <td style="text-align: center">right-aligned</td> <td style="text-align: right">$1600</td> </tr> <tr> <td>col 2 is</td> <td style="text-align: center">centered</td> <td style="text-align: right">$12</td> </tr> <tr> <td>zebra stripes</td> <td style="text-align: center">are neat</td> <td style="text-align: right">$1</td> </tr> </tbody> </table> <p>There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don’t need to make the raw Markdown line up prettily. You can also use inline Markdown.</p> <table> <thead> <tr> <th>Markdown</th> <th>Less</th> <th>Pretty</th> </tr> </thead> <tbody> <tr> <td><em>Still</em></td> <td><code class="language-plaintext highlighter-rouge">renders</code></td> <td><strong>nicely</strong></td> </tr> <tr> <td>1</td> <td>2</td> <td>3</td> </tr> </tbody> </table> <blockquote> <p>Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.</p> </blockquote> <p>Quote break.</p> <blockquote> <p>This is a very long line that will still be quoted properly when it wraps. Oh boy let’s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can <em>put</em> <strong>Markdown</strong> into a blockquote.</p> </blockquote> <p>Here’s a line for us to start with.</p> <p>This line is separated from the one above by two newlines, so it will be a <em>separate paragraph</em>.</p> <p>This line is also a separate paragraph, but… This line is only separated by a single newline, so it’s a separate line in the <em>same paragraph</em>.</p>]]></content><author><name>Albert Einstein</name></author><category term="sample-post"/><category term="distill"/><category term="formatting"/><summary type="html"><![CDATA[an example of a distill-style blog post and main elements]]></summary></entry></feed>
