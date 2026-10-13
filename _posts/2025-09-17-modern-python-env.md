@@ -2,7 +2,8 @@
 layout: post
 title: "Intro to the Modern Python Development Environment"
 date: 2026-09-16 22:43:26 -0400
-categories: jekyll update
+tags: python dev-hints
+categories: personal
 giscus_comments: true
 ---
 
