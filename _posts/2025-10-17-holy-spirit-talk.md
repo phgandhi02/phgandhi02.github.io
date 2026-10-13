@@ -2,6 +2,7 @@
 layout: post
 title: "Holy Spirit Talk"
 date: 2025-10-17 22:43:26 -0400
+tags: holy-spirit speech
 categories: faith
 giscus_comments: true
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome to Jekyll!"
 date: 2026-09-16 22:43:26 -0400
-categories: jekyll update
+categories: sample-posts
 ---
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and

@@ -2,7 +2,8 @@
 layout: post
 title: "PhD Mission Statement"
 date: 2026-03-14 22:43:26 -0400
-categories: faith robotics
+tags: research-plans
+categories: research
 giscus_comments: true
 ---
 
