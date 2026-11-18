@@ -1,0 +1,17 @@
+[workspace]
+authors = ["prem <phgandh2@ncsu.edu>"]
+channels = ["conda-forge"]
+name = "phgandhi02.github.io"
+platforms = [{ platform = "linux-64", cuda = "13.2" }]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+pytorch-gpu = "*"
+jupyterlab = ">=4.6.6,<5"
+pixi-kernel = ">=0.7.1,<0.8"
+torchvision = ">=0.29.2,<0.30"
+matplotlib = ">=3.11.2,<4"
+pillow = ">=13.0.0,<14"
+gdown = ">=6.5.1,<7"
